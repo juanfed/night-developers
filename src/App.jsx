@@ -2,6 +2,7 @@
 // importe de stilos de la pagina
 
 import 'styles/resect.css';
+import 'styles/stilosIndex.css';
 
 // dependencias 
 
