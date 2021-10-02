@@ -1,1 +1,151 @@
 /* Estilos del login */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #181d49;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor1{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja_atras{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+  
+}
+
+.caja_atras div{
+    margin: 100px 40px;
+    color: #F2F2F2;
+    transition: all 500ms;
+    
+}
+
+.caja_atras div p,
+.caja_atras button{
+    margin-top: 30px;
+    
+}
+
+.caja_atras div h3{
+    font-weight: 400;
+    font-size: 26px;
+    
+}
+
+.caja_atras button{
+    padding: 10px 40px;
+    border: 2px solid rgb(106, 81, 248);
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.caja_atras button:hover{
+    background: #fff;
+    color: #46A2FD;
+}
+
+  
+.contenedor_logi_regist{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 370px;
+    position: relative;
+    top: -5px;
+    left: 25px;
+}
+
+.contenedor_logi_regist form{
+    width: 100%;
+    padding: 110px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor_logi_regist form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+
+.contenedor_logi_regist form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor_logi_regist form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: 2px solid rgb(106, 163, 248);
+    font-size: 14px;
+    background: #5aa6f1;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    margin: 20px 20px 0px 15px;
+}
+
+.formulario_logi{
+    opacity: 1;
+    display: block;
+}
+  
+.formulario_regis{
+    display: none;
+}
+
+.boton1{
+    padding: 10px 40px;
+    margin-top: 60px;
+    border: none;
+    font-size: 14px;
+    background: #f9f9fa;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(67, 36, 247);
+    outline: none;
+    
+    
+}
+  

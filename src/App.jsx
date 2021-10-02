@@ -11,7 +11,7 @@ import {
 import Index from 'pages';
 import Login from 'pages/login';
 import Producto from 'pages/producto';
-
+import Registro from "pages/registro";
 
 
 
@@ -22,6 +22,10 @@ function App() {
         <Switch>
           <Route path='/index'>
             <Index />
+          </Route>
+
+          <Route path='/registro'>
+            <Registro/>
           </Route>
 
           <Route path='/producto'>
