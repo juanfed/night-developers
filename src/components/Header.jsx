@@ -8,7 +8,7 @@ function Header(){
         Transicion()
     },[])
     return(
-        <div className="header">
+        <div className="headerPrincipal">
             <div id="body-pd">
                 <header className="header" id="header">
         

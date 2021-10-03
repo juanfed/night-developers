@@ -22,7 +22,7 @@
 box-sizing: border-box;
 }
 
-.header {
+.headerPrincipal {
 position: relative;
 margin: var(--header-height) 0 0 0;
 padding: 0 1rem;
@@ -35,7 +35,7 @@ a {
 text-decoration: none;
 }
 
-.header {
+.headerPrincipal {
 width: 100%;
 height: var(--header-height);
 position: fixed;
@@ -151,12 +151,12 @@ background-color: var(--white-color);
 
 /* Media queris para el diseño responsive*/
 @media screen and (min-width: 768px) {
-.header {
+.headerPrincipal {
     margin: calc(var(--header-height) + 1rem) 0 0 0;
     padding-left: calc(var(--nav-width) + 2rem);
 }
 
-.header {
+.headerPrincipal {
     height: calc(var(--header-height) + 1rem);
     padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
 }
