@@ -5,8 +5,8 @@ function Index (){
     return(
         <div>
             <Header />
-            <div>
-                
+            <div id="contenido">
+                <h1>Se supone que debe estar arregaldo</h1>
             </div>
             
         </div>
