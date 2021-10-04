@@ -35,7 +35,7 @@ a {
 text-decoration: none;
 }
 
-.headerPrincipal {
+.header {
 width: 100%;
 height: var(--header-height);
 position: fixed;
@@ -156,7 +156,7 @@ background-color: var(--white-color);
     padding-left: calc(var(--nav-width) + 2rem);
 }
 
-.headerPrincipal {
+.header {
     height: calc(var(--header-height) + 1rem);
     padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
 }
