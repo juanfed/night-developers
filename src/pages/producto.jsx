@@ -3,7 +3,7 @@ function Producto(){
     return(
         <div>
             <Header />
-                <div>
+                <div id="contenido">
                     <h1>Acá ira todo lo relacionado con la interaz de producto</h1>
                 </div>
             

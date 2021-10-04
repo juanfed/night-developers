@@ -8,7 +8,8 @@ function Header(){
         Transicion()
     },[])
     return(
-        <div className="header">
+        <section id="body">
+            <div className="header">
             <div id="body-pd">
     <header className="header" id="header">
         
@@ -60,6 +61,8 @@ function Header(){
     </div>
 </div>
         </div>
+        </section>
+        
     )
 }
 

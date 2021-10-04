@@ -22,7 +22,7 @@
 box-sizing: border-box;
 }
 
-body {
+#body {
 position: relative;
 margin: var(--header-height) 0 0 0;
 padding: 0 1rem;
@@ -151,7 +151,7 @@ background-color: var(--white-color);
 
 /* Media queris para el diseño responsive*/
 @media screen and (min-width: 768px) {
-body {
+#body {
     margin: calc(var(--header-height) + 1rem) 0 0 0;
     padding-left: calc(var(--nav-width) + 2rem);
 }
