@@ -8,10 +8,9 @@ import {
 } from "react-router-dom";
 
 
-import Index from 'pages';
+import Index from 'pages/index';
 import Login from 'pages/login';
 import Producto from 'pages/producto';
-import Registro from "pages/registro";
 
 
 
@@ -22,10 +21,6 @@ function App() {
         <Switch>
           <Route path='/index'>
             <Index />
-          </Route>
-
-          <Route path='/registro'>
-            <Registro/>
           </Route>
 
           <Route path='/producto'>
