@@ -1,8 +1,8 @@
-import'styles/login.css';
-
+import { Link } from 'react-router-dom';
+import 'styles/login.css';
 function Login(){
     return(
-            <div className="login_body">
+        <div className="login_body">
                 <div className="main">
                 <div className="login_body">
                 <div className="contenedor1">
@@ -18,7 +18,7 @@ function Login(){
                                 <h2>Iniciar Sesión</h2>
                                 <input type="text" placeholder="Correo Electronico"/>
                                 <input type="password" placeholder="Contraseña"/>
-                                <button>Entrar</button>
+                                <Link to="/index"><button>Entrar</button></Link>
                                 <button>Google</button>
                             </form>
                         </div>
