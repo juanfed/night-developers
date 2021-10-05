@@ -20,11 +20,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/index'>
+          <Route path='/index' exact>
             <Index />
           </Route>
 
-          <Route path='/producto'>
+          <Route path='/producto' exact>
             <Producto />
           </Route>
 
