@@ -1,4 +1,11 @@
 /*Aca iran los estilos de la pagina de inicio de secion y registro*/
 #contenido{
-    margin-left: 5rem;
+    margin-left: 4rem;
+    background-color: silver;
+    padding-left: 1rem;
+}
+
+.contenido__tittle{
+    text-align: center;
+    font-size: 1.5rem;
 }

@@ -18,7 +18,7 @@ function Header(){
                     <i className='bx bx-menu' id="header-toggle"></i>
                     </div>
                     <div>
-                    <h1>PC - Master Race</h1>
+                    <h1>Celu-Componentes</h1>
                     </div>
                     <div className="header__img">
                     <img src="img/jx6WiEM.jpg" alt="" />

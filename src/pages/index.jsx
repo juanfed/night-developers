@@ -5,9 +5,11 @@ function Index (){
     return(
         <div>
             <Header />
-            <div id="contenido">
-                <h1>Contenido del index</h1>
-            </div>
+            <section id="contenido">
+                <div className="contenido__tittle">
+                <h1>Las mejores marcas y componentes</h1>
+                </div>
+            </section>
             
         </div>
     )
