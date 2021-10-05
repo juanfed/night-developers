@@ -2,9 +2,9 @@ import'styles/login.css';
 
 function Login(){
     return(
-        <div>
-            <body>
             <div className="login_body">
+                <div className="main">
+                <div className="login_body">
                 <div className="contenedor1">
                     <div className="caja_atras">
                         <div className="caja_atras_regist">
@@ -25,8 +25,9 @@ function Login(){
                     </div>
                 </div>
             </div>
-            </body>
-        </div>
+                </div>
+            
+            </div>
     )
 }
 
