@@ -6,7 +6,7 @@ function Index (){
         <div>
             <Header />
             <div id="contenido">
-                <h1>Se supone que debe estar arregaldo</h1>
+                <h1>Contenido del index</h1>
             </div>
             
         </div>

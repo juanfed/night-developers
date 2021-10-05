@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import 'styles/header.css';
 import Transicion from 'components/script';
 import {useEffect} from 'react';
@@ -30,7 +31,7 @@ function Header(){
                     <div>
                         <a href="#" className="nav__logo">
                         <i className='bx bx-layer' nav__logo-icon></i>
-                        <span className="nav__logo-name">MasterRace</span>
+                        <Link to="/index"><span className="nav__logo-name">MasterRace</span></Link>
                         </a>
 
                         <div className="nav__list">
@@ -41,7 +42,7 @@ function Header(){
 
                         <a href="#" className="nav__link">
                             <i className='bx bxs-cart-alt nav__icon'></i>
-                            <span className="nav__name">Productos</span>
+                            <Link to="/producto"><span className="nav__name">Productos</span></Link>
                         </a>
 
                         <a href="#" className="nav__link">
@@ -54,7 +55,7 @@ function Header(){
                     </div>
                         <a href="#" className="nav__link">
                             <i className='bx bx-log-out nav__icon'></i>
-                            <span className="nav__name">Salir</span>
+                            <Link to="/"><span className="nav__name">Salir</span></Link>
                         </a>
                     </nav>
                 </div>

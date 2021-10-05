@@ -1,10 +1,33 @@
+import { Link } from 'react-router-dom';
 import 'styles/login.css';
 function Login(){
     return(
-        <div>
-            <h2 className="login--h1">Aca ira la pagina en donde se podra ingresar o registrarse para luego redirigirlo al home de la pagina.
-            </h2>
-        </div>
+        <div className="login_body">
+                <div className="main">
+                <div className="login_body">
+                <div className="contenedor1">
+                    <div className="caja_atras">
+                        <div className="caja_atras_regist">
+                            <h3>¿Aún no tienes una cuenta?</h3>
+                            <p>Regístrate para que puedas iniciar sesión</p>
+                            <button id="btn_registrarse">Regístrarse</button>
+                        </div>
+
+                        <div className="contenedor_logi_regist">
+                            <form action="" className="formulario_logi">
+                                <h2>Iniciar Sesión</h2>
+                                <input type="text" placeholder="Correo Electronico"/>
+                                <input type="password" placeholder="Contraseña"/>
+                                <Link to="/index"><button>Entrar</button></Link>
+                                <button>Google</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            
+            </div>
     )
 }
 
