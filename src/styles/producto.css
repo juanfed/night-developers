@@ -22,12 +22,19 @@ color:black;
 }
 
 input.botoness{
-background-color: aqua;
 text-align: center;
 border-radius: 5px;
 width:100px;
 height: 35px;
 margin-left: 15px;
+transition-duration: 0.4s;
+cursor: pointer;
+background-color: #48cae8;
+ }
+
+ input.botoness:hover{
+background-color: white; 
+
  }
 
  input.datos{
@@ -46,4 +53,8 @@ margin-left: 15px;
  margin-bottom: 12px;
  border:solid 2px;
 
+ }
+
+ .Titulo-producto{
+     font-size: 35px;
  }

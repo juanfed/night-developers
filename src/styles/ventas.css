@@ -1,7 +1,7 @@
 /*Acá ira todo lo de ventas */
 table, th, td {    
     margin: 25px; 
-    border:2px solid rgb(5, 236, 213);
+    border:2px solid black (5, 236, 213);
     border-collapse: collapse;
     color:black;background-color:peru;
     text-align: center;
@@ -19,6 +19,10 @@ table, th, td {
     width: 220px;
     color:black;
     
+    }
+    td{
+        background-color:white;
+
     }
     
     input.caja{
@@ -44,21 +48,31 @@ table, th, td {
      text-align: center;
      border-radius: 5px;
      width: 252px;
-     height: 30px;
+     height: 34px;
      margin-bottom: 12px;
      border:solid 2px;
      display:inline-block;
      
-    
      }
-
-
-
-
 #div{
     display:inline-block;
 }
 
 .ventas-boton-agregar{
     display:inline;
+    width: 80px;
+    height: 35px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #48cae8;
 }
+
+.ventas-boton-agregar:hover {
+  background-color: white; 
+  
+}
+.Titulo-producto{
+    font-size: 35px;
+}
+    
