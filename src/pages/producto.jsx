@@ -10,6 +10,7 @@ function Producto(){
                     <form onsubmit="myFunction(); return false;" required />
 
                         <center>
+                            <p className="Titulo-producto">Gestion de Productos</p>
                         <input class="datos" type="text" id= "pID" placeholder="Ingrese el ID" required/><br/>
                         <input  class="datos" type="text" id= "pNombre" placeholder="Ingrese el Nombre" required/><br/>
                         <input  class="datos" type="text" id= "pDes" placeholder="Ingrese La Descripción" required/><br/>
@@ -18,9 +19,9 @@ function Producto(){
 
                             
                             <option value="Seleccione">Seleccione</option>
-                            <option value="En proceso">En proceso</option>
-                            <option value="Entregado">Entregado</option>
-                            <option value="Cancelado">Cancelado</option>
+                            <option value="En proceso">Disponible</option>
+                            <option value="Entregado">Agotado</option>
+                            
                         </select>
 
                         <br/>
@@ -33,12 +34,29 @@ function Producto(){
 
                     <table id = "miTabla">
                         <tr>
-                            <td >ID</td>
-                            <td >Nombre</td>
-                            <td >Descripción</td>
-                            <td >Valor Unitario</td>
-                            <td >Estado</td>
+                            <th >ID</th>
+                            <th >Producto</th>
+                            <th >Descripción</th>
+                            <th >Valor Unitario</th>
+                            <th >Estado</th>
                         </tr> 
+                        <tr>
+                            <td>01</td>
+                            <td >Redmi note 8</td>
+                            <td >64 GB memoria, 8GB Ram</td>
+                            <td >650.000</td>
+                            <td >Disponible</td>
+                        </tr> 
+
+                        <tr>
+                            <td>02</td>
+                            <td >Redmi note 9</td>
+                            <td >120 GB memoria, 8GB Ram</td>
+                            <td >850.000</td>
+                            <td >Disponible</td>
+                        </tr> 
+                        
+
                         
 
                         

@@ -47,7 +47,7 @@ function Header(){
 
                         <a href="#" className="nav__link">
                             <i className='bx bxs-bar-chart-alt-2 nav__icon'></i>
-                            <span className="nav__name">Ventas</span>
+                            <Link to="/ventas"><span className="nav__name">Ventas</span></Link>
                         </a>
 
                         <a href="#" className="nav__link">

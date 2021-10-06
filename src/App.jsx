@@ -11,6 +11,7 @@ import {
 import Index from 'pages';
 import Login from 'pages/login';
 import Producto from 'pages/producto';
+import Ventas from 'pages/ventas';
 import Gestion from "pages/gestion";
 
 
@@ -29,6 +30,10 @@ function App() {
             <Producto />
           </Route>
 
+          <Route path='/ventas' exact>
+            <Ventas />
+          </Route>
+          
           <Route path='/gestion'>
             <Gestion />
           </Route>

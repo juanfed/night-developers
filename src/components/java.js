@@ -12,6 +12,7 @@ function myFunction(){
     cell3.innerHTML = document.getElementById("pDes").value;
     cell4.innerHTML = document.getElementById("pValor").value;
     cell5.innerHTML = document.getElementById("pEstado").value;
+    
 
 }
 export default myFunction;
