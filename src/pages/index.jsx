@@ -9,6 +9,9 @@ function Index (){
                 <div className="contenido__tittle">
                 <h1>Las mejores marcas y componentes</h1>
                 </div>
+                <div className="img_Index">
+                    <img src="Media/img index.png" alt="celulares" />
+                </div>
             </section>
             
         </div>

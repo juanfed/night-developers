@@ -9,3 +9,19 @@
     text-align: center;
     font-size: 1.5rem;
 }
+
+.img_Index{
+    display: flex;
+    margin:auto;
+    border-radius:5px;
+    border: 1px solid #999;
+    width:1200px;
+    height: 640px;;
+    background-repeat:no-repeat; 
+    object-fit: cover;
+}
+
+.img_Index > img{
+    width: 100%;
+    
+}
