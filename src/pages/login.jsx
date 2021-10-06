@@ -10,7 +10,7 @@ function Login(){
                         <div className="caja_atras_regist">
                             <h3>¿Aún no tienes una cuenta?</h3>
                             <p>Regístrate para que puedas iniciar sesión</p>
-                            <button id="btn_registrarse">Regístrarse</button>
+                            <Link to="/registro"><button id="btn_registrarse">Regístrarse</button></Link>
                         </div>
 
                         <div className="contenedor_logi_regist">

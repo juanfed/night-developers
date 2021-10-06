@@ -13,6 +13,7 @@ import Login from 'pages/login';
 import Producto from 'pages/producto';
 import Ventas from 'pages/ventas';
 import Gestion from "pages/gestion";
+import Registro from "components/registro";
 
 
 
@@ -22,6 +23,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+
+          <Route path='/registro' exact>
+            <Registro/>
+          </Route>
+
           <Route path='/index' exact>
             <Index />
           </Route>

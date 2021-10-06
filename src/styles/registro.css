@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Aca ira todo lo relacionado con los eltilos del formulario*/
+.registroCaja{
+    background-color: silver;
+    height: 100vh;
+}
+
+.formularioTitulo{
+    text-align: center;
+}
+
+.formularioRegistro input{
+    display: block;
+    margin: auto;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Esto de aca abajo no uqiere fucionar*/
+.formularioRegistro{
+    display: flex;
+    margin: auto;
+}
