@@ -1,0 +1,64 @@
+/*Acá ira todo lo de ventas */
+table, th, td {    
+    margin: 25px; 
+    border:2px solid rgb(5, 236, 213);
+    border-collapse: collapse;
+    color:black;background-color:peru;
+    text-align: center;
+    }
+    body{
+        overflow-y: hidden; /*Modificar para el siguiente sprint*/
+    }
+    #contenido__producto{
+        height:100vh;
+        background-color:#ededed;
+        overflow: hidden;
+    }
+    
+    th, td {padding: 20px; 
+    width: 220px;
+    color:black;
+    
+    }
+    
+    input.caja{
+    text-align: center;
+    border-radius: 5px;
+    width:250px;
+    height: 35px;
+    margin-left: 15px;
+    
+     }
+    
+     input.datos{
+     text-align: center;
+     border-radius: 5px;
+     width:250px;
+     height: 30px;
+     margin-bottom: 12px;
+     
+     
+     }
+    
+     select.caja{
+     text-align: center;
+     border-radius: 5px;
+     width: 252px;
+     height: 30px;
+     margin-bottom: 12px;
+     border:solid 2px;
+     display:inline-block;
+     
+    
+     }
+
+
+
+
+#div{
+    display:inline-block;
+}
+
+.ventas-boton-agregar{
+    display:inline;
+}
