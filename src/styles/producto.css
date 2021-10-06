@@ -1,0 +1,49 @@
+
+ table, th, td {    
+margin: 25px; 
+border:2px solid gray;
+border-collapse: collapse;
+color:black;background-color:peru;
+text-align: center;
+}
+body{
+    overflow-y: hidden; /*Modificar para el siguiente sprint*/
+}
+#contenido__producto{
+    height:100vh;
+    background-color:#ededed;
+    overflow: hidden;
+}
+
+th, td {padding: 30px; 
+width: 120px;
+color:black;
+
+}
+
+input.botoness{
+background-color: aqua;
+text-align: center;
+border-radius: 5px;
+width:100px;
+height: 35px;
+margin-left: 15px;
+ }
+
+ input.datos{
+ text-align: center;
+ border-radius: 5px;
+ width:250px;
+ height: 30px;
+ margin-bottom: 12px;
+ }
+
+ select.multi{
+ text-align: center;
+ border-radius: 5px;
+ width:260px;
+ height: 30px;
+ margin-bottom: 12px;
+ border:solid 2px;
+
+ }
