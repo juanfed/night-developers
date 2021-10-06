@@ -39,3 +39,23 @@
 #contenido-gestion{
     padding-top: 1rem;
 }
+
+.carUser-modificar button{
+    margin: 0.5rem 1rem 1rem 1rem;
+
+}
+
+.tablaUsuarios table{
+    margin:auto;
+}
+
+.botonCarUser{
+transition-duration: 0.4s;
+cursor: pointer;
+background-color: #2d84e7;
+color: white;
+}
+
+.botonCarUser:hover{
+    background-color: #355baf; 
+}

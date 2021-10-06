@@ -11,25 +11,61 @@ function CarUsers(){
                     <form action="">
                         <div className="carUser-datos">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" value="Juan Fernando" />
+                            <input type="text" id="nombre"  placeholder="Ingrese el nombre"/>
                         </div>
 
                         <div className="carUser-datos">
-                            <label for="rol">Rol</label>
-                            <input type="text" id="rol" value="Abministrador" />
+                            <p>
+                                Rol: <br />
+                                <select name="Rol">
+                                <option >Administrador</option>
+                                <option>Vendedor</option>
+                                </select>
+                            </p>
                         </div>
 
                         <div className="carUser-datos">
-                            <label for="estado">Estado</label>
-                            <input type="text" id="estado" value="Autorizado" />
-                            
+                        <p>
+                            Estado: <br />
+                            <select name="Rol">
+                            <option >Pendiente</option>
+                            <option>Autorizado</option>
+                            <option>No Autorizado</option>
+                            </select>
+                            </p>
                         </div>
                         
                     </form>
                 </div>
                 <div className="carUser-modificar">
-                    <button>Modificar</button>
+                    <button className="botonCarUser">Agregar</button>
+                    <button className="botonCarUser">Eliminar</button>
                 </div>
+            </div>
+            <br />
+            <div className="tablaUsuarios">
+                <table className="tabla--Usuarios">
+                    <tr>
+                        <th >Nombre </th>
+                        <th >Rol</th>
+                        <th >Correo</th>
+                        <th >Estado</th>
+                    </tr> 
+
+                    <tr>
+                        <td>Juan Fernando</td>
+                        <td >Administrador</td>
+                        <td >Juanfed12345@gmail.com</td>
+                        <td>Activo</td>
+                    </tr> 
+
+                    <tr>
+                        <td>Cristian Camilo</td>
+                        <td>Vendedor</td>
+                        <td>CristianCami@outlook.com</td>
+                        <td>Pendiente</td>
+                    </tr> 
+                </table>
             </div>
         </div>
         

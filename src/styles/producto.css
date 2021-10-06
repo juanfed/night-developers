@@ -3,7 +3,7 @@
 margin: 25px; 
 border:2px solid gray;
 border-collapse: collapse;
-color:black;background-color:peru;
+color:black;background-color:rgb(26, 70, 165);
 text-align: center;
 }
 body{
@@ -29,11 +29,12 @@ height: 35px;
 margin-left: 15px;
 transition-duration: 0.4s;
 cursor: pointer;
-background-color: #48cae8;
- }
+background-color: #2d84e7;
+color: white;
+}
 
  input.botoness:hover{
-background-color: white; 
+background-color: #355baf; 
 
  }
 
