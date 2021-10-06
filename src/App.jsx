@@ -11,6 +11,7 @@ import {
 import Index from 'pages';
 import Login from 'pages/login';
 import Producto from 'pages/producto';
+import Gestion from "pages/gestion";
 
 
 
@@ -26,6 +27,10 @@ function App() {
 
           <Route path='/producto'>
             <Producto />
+          </Route>
+
+          <Route path='/gestion'>
+            <Gestion />
           </Route>
 
           <Route path='/'>

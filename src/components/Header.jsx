@@ -50,6 +50,11 @@ function Header(){
                             <span className="nav__name">Ventas</span>
                         </a>
 
+                        <a href="#" className="nav__link">
+                            <i className='bx bxs-group bx-flip-horizontal bx-tada' id="icono__gestion"></i>
+                            <Link to="/gestion"><span className="nav__name">Gestion Usuarios</span></Link>
+                        </a>
+
                     </div>
 
                     </div>

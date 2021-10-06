@@ -183,3 +183,8 @@ background-color: var(--white-color);
     padding-left: calc(var(--nav-width) + 188px);
 }
 }
+
+
+#icono__gestion{
+    font-size: 1.6rem;
+}
