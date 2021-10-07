@@ -20,7 +20,7 @@
 .formularioRegistro{
     margin: auto;
     flex-direction: column;
-    height: 63vh;
+    height: 68vh;
     width: 40vh;
     border-radius: 30px;
     background-color: #1c6fad;
@@ -34,8 +34,6 @@
     color: white;
 }
 
-
-/* Caja de donde esta el tutulo del campo y campo para la informacion */
 .formularioRegistro-caja{
     text-align: center;
 }
@@ -55,6 +53,20 @@
     display: block;
 }
 
+.botonRegistrar{
+    text-align: center;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+.botonRegistrar span{
+    margin: 0rem 1rem 0rem 1rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    background-color: #ededed;
+    color: rgb(0, 25, 136);
+}
 
 
 

@@ -1,4 +1,5 @@
 import 'styles/registro.css';
+import { Link } from 'react-router-dom';
 function Registro(){
     return(
         <div className="registroCaja">
@@ -43,6 +44,13 @@ function Registro(){
                         <option>Vendedor</option>
                         <option>Usuario</option>
                     </select>
+
+                    <div className="botonRegistrar">
+                        <span>Enviar</span>
+                        <Link to="/"><span>Cancelar</span></Link>
+                        
+                    </div>
+                    
                 </form>
             </div>
         </div>
