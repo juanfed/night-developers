@@ -56,7 +56,7 @@ function CarUsers(){
                         <td>Juan Fernando</td>
                         <td >Administrador</td>
                         <td >Juanfed12345@gmail.com</td>
-                        <td>Activo</td>
+                        <td>Autorizado</td>
                     </tr> 
 
                     <tr>

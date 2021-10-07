@@ -6,7 +6,7 @@
 
 /*Aca ira todo lo relacionado con los eltilos del formulario*/
 .registroCaja{
-    background-color: #1c6fad;
+    background-image: url("imagenes/fondoRegistro2.jpg");
     height: 100vh;
 }
 
@@ -14,14 +14,16 @@
     text-align: center;
     font-size: 1.85rem;
     padding-top: 3rem;
+    padding-bottom: 2rem;
 }
 
 .formularioRegistro{
     margin: auto;
     flex-direction: column;
-    border: 3px solid blue;
-    height: 70vh;
-    background-color: rgb(255, 255, 255);
+    height: 63vh;
+    width: 40vh;
+    border-radius: 30px;
+    background-color: #1c6fad;
 }
 
 .formularioRegistro label{
@@ -29,6 +31,7 @@
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
     font-size: 1.2rem;
+    color: white;
 }
 
 
@@ -36,6 +39,15 @@
 .formularioRegistro-caja{
     text-align: center;
 }
+
+.formularioRegistro-caja input{
+    background-color:#ededed;
+    width:80%;
+    font-size: 1.25rem;
+    border-radius:12px 5px 12px 5px;
+    border: 0;
+}
+
 
 .formularioRegistro select{
     flex-direction: column;
