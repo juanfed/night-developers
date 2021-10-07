@@ -11,11 +11,11 @@ function Producto(){
 
                         <center>
                             <p className="Titulo-producto">Gestion de Productos</p>
-                        <input class="datos" type="text" id= "pID" placeholder="Ingrese el ID" required/><br/>
-                        <input  class="datos" type="text" id= "pNombre" placeholder="Ingrese el Nombre" required/><br/>
-                        <input  class="datos" type="text" id= "pDes" placeholder="Ingrese La Descripción" required/><br/>
-                        <input  class="datos"type="number" id= "pValor" placeholder="Ingrese el Valor Unitario" required/><br/>
-                        <select  class= "multi"  id="pEstado" required>
+                        <input className="datos" type="text" id= "pID" placeholder="Ingrese el ID" required/><br/>
+                        <input  className="datos" type="text" id= "pNombre" placeholder="Ingrese el Nombre" required/><br/>
+                        <input  className="datos" type="text" id= "pDes" placeholder="Ingrese La Descripción" required/><br/>
+                        <input  className="datos"type="number" id= "pValor" placeholder="Ingrese el Valor Unitario" required/><br/>
+                        <select  className= "multi"  id="pEstado" required>
 
                             
                             <option value="Seleccione">Seleccione</option>
@@ -27,8 +27,8 @@ function Producto(){
                         <br/>
                         <br/>
 
-                        <input class ="botoness"type="submit" value="Registrar" />
-                        <input class ="botoness" type="reset" value="Limpiar" />
+                        <input className ="botoness"type="submit" value="Registrar" />
+                        <input className ="botoness" type="reset" value="Limpiar" />
 
                     
 

@@ -6,19 +6,43 @@
 
 /*Aca ira todo lo relacionado con los eltilos del formulario*/
 .registroCaja{
-    background-color: silver;
+    background-color: #1c6fad;
     height: 100vh;
 }
 
 .formularioTitulo{
     text-align: center;
+    font-size: 1.85rem;
+    padding-top: 3rem;
 }
 
-.formularioRegistro input{
-    display: block;
+.formularioRegistro{
     margin: auto;
-    display: flex;
+    flex-direction: column;
+    border: 3px solid blue;
+    height: 70vh;
+    background-color: rgb(255, 255, 255);
 }
+
+.formularioRegistro label{
+    display: block;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+    font-size: 1.2rem;
+}
+
+
+/* Caja de donde esta el tutulo del campo y campo para la informacion */
+.formularioRegistro-caja{
+    text-align: center;
+}
+
+.formularioRegistro select{
+    flex-direction: column;
+    margin: auto;
+    display: block;
+}
+
 
 
 

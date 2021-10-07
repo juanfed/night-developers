@@ -8,12 +8,41 @@ function Registro(){
 
             <div className="formularioRegistro">
                 <form action="">
-                    <label htmlFor="nombre">Nombre: </label>
-                    <input type="text" />
-                    <label htmlFor="apellido"></label>
-                    <input type="text" />
-                    <label htmlFor="contraseña"></label>
-                    <input type="password" />
+                    <div className="formularioRegistro-caja">
+                        <label for="nombreRegistro">Nombre: </label>
+                        <input type="text"  id="nombreRegistro"/>
+                    </div>
+                    
+                    <div className="formularioRegistro-caja">
+                    <label for="apellidoRegistro">Apellido</label>
+                    <input type="text" id="apellidoRegistro"/>
+                    </div>
+
+                    <div className="formularioRegistro-caja">
+                    <label for="correoRegistro">Correo</label>
+                    <input type="email" id="correoRegistro" />
+                    </div>
+                    
+                    <div className="formularioRegistro-caja">
+                    <label for="contraseñaRegistro">Contraseña</label>
+                    <input type="password" id="contraseñaRegistro" />
+                    </div>
+
+                    <div className="formularioRegistro-caja">
+                    <label for="contraseñaRegistro2">Confirmar contraseña</label>
+                    <input type="password" id="contrseñaRegistro2"/>
+                    </div>
+                    
+                    <div className="formularioRegistro-caja">
+                    <label for="botonRegistro">Rol</label> <br />
+                    </div>
+                    
+                    
+                    <select>
+                        <option value="Administrador">Administrador</option>
+                        <option>Vendedor</option>
+                        <option>Usuario</option>
+                    </select>
                 </form>
             </div>
         </div>
