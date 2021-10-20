@@ -1,66 +1,80 @@
-import React from 'react';
 import 'styles/ventas.css';
+import React, { useState } from 'react';
 
-const ventas = () => {
+const Ventas = () => {
+    const [titulo, setTitulo] = useState('Agregar Ventas');
+    const botonVentas = () => {
+        setTitulo(titulo == 'Agregar Ventas' ? "Ver Lista De Ventas" : "Agregar Ventas")
+
+    };
+
     return (
+
         <div className="contenido">
             <center>
-                <p className="Titulo-producto">Gestion de Ventas</p>
+                <button className="ventasTitulo" onClick={botonVentas}>{titulo}</button>
+                {
+                    titulo == 'Ver Lista De Ventas' && (
+                        <><thead className="contenidoProducto">
+                            <div id="div">
+                                <p>Productos</p>
+                                <select id="productos" class="caja">
+                                    <option value="">Productos</option>
+                                    <option value="laptos">Laptos</option>
+                                    <option value="Tablec">Tablec</option>
+                                </select>
+                            </div>
 
-                <thead className="contenidoProducto">
-                    <div id="div">
-                        <p>Productos</p>
-                        <select id="productos" class="caja">
-                            <option value="">Productos</option>
-                            <option value="laptos">Laptos</option>
-                            <option value="Tablec">Tablec</option>
-                        </select>
-                    </div>
+                            <div id="div">
+                                <p>Precio</p>
+                                <input type="text" id="precio" class="caja" />
+                            </div>
 
-                    <div id="div">
-                        <p>Precio</p>
-                        <input type="text" id="precio" class="caja" />
-                    </div>
+                            <div id="div">
+                                <p>Cantidad</p>
+                                <input type="text" id="cantidad" class="caja" />
+                            </div>
+                        </thead><button type="button" name="name" id="buttom" onclick="agregar()" alerta="Guardado con exito" className="ventas-boton-agregar">Agregar</button></>
+                    )
+                }
 
-                    <div id="div">
-                        <p>Cantidad</p>
-                        <input type="text" id="cantidad" class="caja" />
-                    </div>
-                </thead>
+                {
 
-                <button type="button" name="name" id="buttom" onclick="agregar()" alerta="Guardado con exito" className="ventas-boton-agregar">Agregar</button>
-                <table id="info">
+                    titulo == 'Agregar Ventas' && (
 
-                    <thead>
+                        <table id="info">
 
-                        <tr>
-                            <th>ID Venta</th>
-                            <th>precio</th>
-                            <th>cantidad</th>
-                            <th>Comprador</th>
-                            <th>Estado</th>
+                            <thead>
 
-                        </tr>
-                        <tr>
-                            <td>V01</td>
-                            <td >1.500.000</td>
-                            <td >2</td>
-                            <td >Carlos</td>
-                            <td >En proceso</td>
-                        </tr>
-                        <tr>
-                            <td>V02</td>
-                            <td >750.000</td>
-                            <td >1</td>
-                            <td >Juan</td>
-                            <td >Cancelado</td>
-                        </tr>
+                                <tr>
+                                    <th>ID Venta</th>
+                                    <th>precio</th>
+                                    <th>cantidad</th>
+                                    <th>Comprador</th>
+                                    <th>Estado</th>
 
-                    </thead>
-                </table>
+                                </tr>
+                                <tr>
+                                    <td>V01</td>
+                                    <td >1.500.000</td>
+                                    <td >2</td>
+                                    <td >Carlos</td>
+                                    <td >En proceso</td>
+                                </tr>
+                                <tr>
+                                    <td>V02</td>
+                                    <td >750.000</td>
+                                    <td >1</td>
+                                    <td >Juan</td>
+                                    <td >Cancelado</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    )
+                }
             </center>
         </div>
     )
 }
 
-export default ventas
+export default Ventas

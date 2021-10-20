@@ -11,7 +11,7 @@ import Producto from "pages/producto";
 import Ventas from "pages/ventas";
 import Gestion from "pages/gestion";
 import Admin from "pages/Admin";
-import Login from "pages/Login";
+import Login from "pages/login";
 import Registro from "components/registro";
 
 
