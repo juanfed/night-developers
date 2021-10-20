@@ -6,7 +6,7 @@ const showNavbar = (toggleId, navId, bodyId, headerId) =>{
     bodypd = document.getElementById(bodyId),
     headerpd = document.getElementById(headerId)
 
-    // Validate that all variables exist
+    // Validar las variables
     if(toggle && nav && bodypd && headerpd){
         toggle.addEventListener('click', ()=>{
             // show navbar

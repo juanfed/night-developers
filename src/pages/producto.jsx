@@ -1,52 +1,51 @@
-import Header from "components/Header";
 import 'styles/producto.css';
+import React from 'react'
 
-function Producto(){
-    return(
+const producto = () => {
+    return (
         <div>
-            <Header />
-                <div id="contenido__producto">
-                    
-                    <form onsubmit="myFunction(); return false;" required />
+            <div id="contenido__producto">
 
-                        <center>
-                            <p className="Titulo-producto">Gestion de Productos</p>
-                        <input className="datos" type="text" id= "pID" placeholder="Ingrese el ID" required/><br/>
-                        <input  className="datos" type="text" id= "pNombre" placeholder="Ingrese el Nombre" required/><br/>
-                        <input  className="datos" type="text" id= "pDes" placeholder="Ingrese La Descripción" required/><br/>
-                        <input  className="datos"type="number" id= "pValor" placeholder="Ingrese el Valor Unitario" required/><br/>
-                        <select  className= "multi"  id="pEstado" required>
+                <form onsubmit="myFunction(); return false;" required />
 
-                            
-                            <option value="Seleccione">Seleccione</option>
-                            <option value="En proceso">Disponible</option>
-                            <option value="Entregado">Agotado</option>
-                            
-                        </select>
+                <center>
+                    <p className="Titulo-producto">Gestion de Productos</p>
+                    <input className="datos" type="text" id="pID" placeholder="Ingrese el ID" required /><br />
+                    <input className="datos" type="text" id="pNombre" placeholder="Ingrese el Nombre" required /><br />
+                    <input className="datos" type="text" id="pDes" placeholder="Ingrese La Descripción" required /><br />
+                    <input className="datos" type="number" id="pValor" placeholder="Ingrese el Valor Unitario" required /><br />
+                    <select className="multi" id="pEstado" required>
 
-                        <br/>
-                        <br/>
 
-                        <input className ="botoness"type="submit" value="Registrar" />
-                        <input className ="botoness" type="reset" value="Limpiar" />
+                        <option value="Seleccione">Seleccione</option>
+                        <option value="En proceso">Disponible</option>
+                        <option value="Entregado">Agotado</option>
 
-                    
+                    </select>
 
-                    <table id = "miTabla">
+                    <br />
+                    <br />
+
+                    <input className="botoness" type="submit" value="Registrar" />
+                    <input className="botoness" type="reset" value="Limpiar" />
+
+
+
+                    <table id="miTabla">
                         <tr>
                             <th >ID</th>
                             <th >Producto</th>
                             <th >Descripción</th>
                             <th >Valor Unitario</th>
                             <th >Estado</th>
-                        </tr> 
+                        </tr>
                         <tr>
                             <td>01</td>
                             <td >Redmi note 8</td>
                             <td >64 GB memoria, 8GB Ram</td>
                             <td >650.000</td>
                             <td >Disponible</td>
-                        </tr> 
+                        </tr>
 
                         <tr>
                             <td>02</td>
@@ -54,24 +53,12 @@ function Producto(){
                             <td >120 GB memoria, 8GB Ram</td>
                             <td >850.000</td>
                             <td >Disponible</td>
-                        </tr> 
-                        
-
-                        
-
-                        
-                    </table> 
-                    </center>
-                    
-                    
-
-            
+                        </tr>
+                    </table>
+                </center>
+            </div>
         </div>
-    </div>
-    
-    
     )
 }
 
-
-export default Producto;
+export default producto

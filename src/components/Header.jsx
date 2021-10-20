@@ -31,7 +31,7 @@ function Header(){
                     <div>
                         <a href="#" className="nav__logo">
                         <i className='bx bx-layer' nav__logo-icon></i>
-                        <Link to="/index"><span className="nav__logo-name">Inicio</span></Link>
+                        <Link to="/admin"><span className="nav__logo-name">Inicio</span></Link>
                         </a>
 
                         <div className="nav__list">
@@ -42,17 +42,17 @@ function Header(){
 
                         <a href="#" className="nav__link">
                             <i className='bx bxs-cart-alt nav__icon'></i>
-                            <Link to="/producto"><span className="nav__name">Productos</span></Link>
+                            <Link to="/admin/producto"><span className="nav__name">Productos</span></Link>
                         </a>
 
                         <a href="#" className="nav__link">
                             <i className='bx bxs-bar-chart-alt-2 nav__icon'></i>
-                            <Link to="/ventas"><span className="nav__name">Ventas</span></Link>
+                            <Link to="/admin/ventas"><span className="nav__name">Ventas</span></Link>
                         </a>
 
                         <a href="#" className="nav__link">
                             <i className='bx bxs-group bx-flip-horizontal bx-tada' id="icono__gestion"></i>
-                            <Link to="/gestion"><span className="nav__name">Gestion Usuarios</span></Link>
+                            <Link to="/admin/gestionUser"><span className="nav__name">Gestion Usuarios</span></Link>
                         </a>
 
                     </div>
@@ -60,7 +60,7 @@ function Header(){
                     </div>
                         <a href="#" className="nav__link">
                             <i className='bx bx-log-out nav__icon'></i>
-                            <Link to="/"><span className="nav__name">Salir</span></Link>
+                            <Link to="/login"><span className="nav__name">Salir</span></Link>
                         </a>
                     </nav>
                 </div>
