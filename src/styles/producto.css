@@ -1,9 +1,12 @@
-
- table, th, td {    
+.productoTitulo{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+table, th, td {    
 margin: 25px; 
 border:2px solid gray;
 border-collapse: collapse;
-color:black;background-color:rgb(26, 70, 165);
 text-align: center;
 }
 body{
