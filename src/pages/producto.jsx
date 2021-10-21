@@ -22,7 +22,7 @@ const listaProductos = [
     descripcion: "Telefono celular",
     valor: "3.544.999",
     estado: "disponible"
-  }
+  },
 
 ]
 
@@ -51,7 +51,8 @@ const Producto = () => {
         <center>
           <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
           <div>
-            {mostrarTabla ? (<ListaProductos listaCelulares={productos}/>) : (<AgregarProducto />)}
+            {mostrarTabla ? (<ListaProductos listaCelulares={productos}/>) : (<AgregarProducto 
+            crearDato={setProductos} listaProductos={productos}/>)}
           </div>
         </center>
       </div>
@@ -60,32 +61,65 @@ const Producto = () => {
 };
 export default Producto;
 
-const AgregarProducto = () => {
+const AgregarProducto = ({
+  crearDato,
+  listaProductos
+}) => {
+
+
+  const [id, setId] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [valor, setValor] = useState('');
+  const [estado, setEstado] = useState('');
+
+  // aca la funcion para el envio de los datos al backend
+  const enviarDatos = ()=>{
+    console.log('id', id, 'nombre', nombre, 'descipcion', descripcion, 'valor', valor, 'estado', estado);
+    crearDato([...listaProductos,{id:id, nombre:nombre, descripcion:descripcion, valor:valor, estado:estado},]);
+  }
+
   return (
     <form action="">
-      <input className="datos" type="text" id="pID" placeholder="Ingrese el ID" required /><br />
-      <input className="datos" type="text" id="pNombre" placeholder="Ingrese el Nombre" required /><br />
-      <input className="datos" type="text" id="pDes" placeholder="Ingrese La Descripción" required /><br />
-      <input className="datos" type="number" id="pValor" placeholder="Ingrese el Valor Unitario" required /><br />
-      <select className="multi" id="pEstado" required>
+      <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  value={id}
+      onChange={(e)=>{
+        setId(e.target.value);
+      }} />
+      <br />
+      <input className="datos" type="text" name='nombre' placeholder="Ingrese el Nombre" required value={nombre}
+      onChange={(e)=>{
+        setNombre(e.target.value);
+      }} />
+      <br />
+      <input className="datos" type="text" name='descipcion' placeholder="Ingrese La Descripción" value={descripcion}required
+      onChange={(e)=>{
+        setDescripcion(e.target.value);
+      }} />
+      <br />
+      <input className="datos" type="text" name='valor' placeholder="Ingrese el Valor Unitario" required  value={valor}
+      onChange={(e)=>{
+        setValor(e.target.value);
+      }} />
+      <br />
+      <select className="multi" name='estado' required onChange={(e)=>{setEstado(e.target.value);}}>
 
 
-        <option value="Seleccione">Seleccione</option>
-        <option value="En proceso">Disponible</option>
-        <option value="Entregado">Agotado</option>
+        <option>Seleccione</option>
+        <option>Disponible</option>
+        <option>Agotado</option>
 
       </select>
 
       <br />
       <br />
 
-      <input className="botoness" type="submit" value="Registrar" />
-      <input className="botoness" type="reset" value="Limpiar" />
+      <button  className="botoness" type="button" onClick={()=>{enviarDatos()}}>Registrar</button>
+      <button  className="botoness" type="reset">Limpiar</button>
     </form>
   )
 }
 
-const ListaProductos = ({ listaCelulares }) => {
+const ListaProductos = ({ listaCelulares}) => {
   useEffect(()=>{
     console.log("se supone que deberia de mostrarse en consola",listaCelulares);
   }, [listaCelulares] )
