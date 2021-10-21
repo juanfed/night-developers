@@ -34,7 +34,19 @@ function Ventas(){
             </thead>
 
 
+           
+        
+        <button type="button" name="name" id="buttom" className="ventas-boton-agregar">Actualizar</button>
         <button type="button" name="name" id="buttom" onclick="agregar()" alerta="Guardado con exito" className="ventas-boton-agregar">Agregar</button>
+        
+
+        <div className="buscador">
+                <input type="text" placeholder="Buscar" required/>
+                <button type="button" name="name" id="buttom" className="buscar-boton">Buscar</button>
+        </div>
+        
+    
+        
         <table id="info">
 
             <thead>

@@ -1,11 +1,11 @@
 import Header from "components/Header";
 import 'styles/producto.css';
 
-function Producto(){
+function Producto(){ 
     return(
-        <div>
+        <div> 
             <Header />
-                <div id="contenido__producto">
+                <div id="contenido__producto"> 
                     
                     <form onsubmit="myFunction(); return false;" required />
 
@@ -30,6 +30,17 @@ function Producto(){
                         <input className ="botoness"type="submit" value="Registrar" />
                         <input className ="botoness" type="reset" value="Limpiar" />
 
+                        
+                        <div>
+                        <input className ="botoness" type="text" value="Actualizar" />
+                        </div>
+
+                        <div className="buscadorp">
+                            <input type="text" placeholder="Buscar" required/>
+                            <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+                        </div>
+
+                    
                     
 
                     <table id = "miTabla">
