@@ -1,50 +1,75 @@
 import 'styles/gestion.css';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const gestionUsuarios = () => {
+    return (
+        <div className="carUser">
+            <div className="carUser-img">
+                <i className='bx bx-user-circle' ></i>
+            </div>
+            <div className="carUser-formulario">
+                <form action="">
+                    <div className="carUser-datos">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ingrese el nombre" />
+                    </div>
+
+                    <div className="carUser-datos">
+                        <p>
+                            Rol: <br />
+                            <select name="Rol">
+                                <option >Administrador</option>
+                                <option>Vendedor</option>
+                            </select>
+                        </p>
+                    </div>
+
+                    <div className="carUser-datos">
+                        <p>
+                            Estado: <br />
+                            <select name="Rol">
+                                <option >Pendiente</option>
+                                <option>Autorizado</option>
+                                <option>No Autorizado</option>
+                            </select>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+            <div className="carUser-modificar">
+                <button className="botonCarUser">Agregar</button>
+                <button className="botonCarUser">Eliminar</button>
+            </div>
+        </div>
+    )
+}
 
 
-const gestion = () => {
+
+const Gestion = () => {
+
+    const [mostrarTabla, setMostrarTabla] = useState(true);
+    const [titulo, setTitulo] = useState("Agregar usuario");
+
+    useEffect(() => {
+        if (mostrarTabla) {
+            setTitulo("Agregar usuario");
+        } else {
+            setTitulo("Ver lista de usuarios")
+        }
+    })
+
     return (
         <div id="contenido-gestion">
-            <div className="carUser">
-                <div className="carUser-img">
-                    <i className='bx bx-user-circle' ></i>
-                </div>
-                <div className="carUser-formulario">
-                    <form action="">
-                        <div className="carUser-datos">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Ingrese el nombre" />
-                        </div>
+            <center>
+                <h2 onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</h2>
 
-                        <div className="carUser-datos">
-                            <p>
-                                Rol: <br />
-                                <select name="Rol">
-                                    <option >Administrador</option>
-                                    <option>Vendedor</option>
-                                </select>
-                            </p>
-                        </div>
-
-                        <div className="carUser-datos">
-                            <p>
-                                Estado: <br />
-                                <select name="Rol">
-                                    <option >Pendiente</option>
-                                    <option>Autorizado</option>
-                                    <option>No Autorizado</option>
-                                </select>
-                            </p>
-                        </div>
-
-                    </form>
+                <div>
+                    {mostrarTabla ? "hola como estas" : "adios"}
                 </div>
-                <div className="carUser-modificar">
-                    <button className="botonCarUser">Agregar</button>
-                    <button className="botonCarUser">Eliminar</button>
-                </div>
-            </div>
+            </center>
             <br />
             <div className="tablaUsuarios">
                 <table className="tabla--Usuarios">
@@ -74,5 +99,5 @@ const gestion = () => {
     )
 }
 
-export default gestion
+export default Gestion;
 
