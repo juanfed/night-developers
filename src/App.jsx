@@ -8,13 +8,12 @@ import {
 } from "react-router-dom";
 
 
-import Index from 'pages';
+import Index from 'pages/index';
 import Login from 'pages/login';
 import Producto from 'pages/producto';
 import Ventas from 'pages/ventas';
 import Gestion from "pages/gestion";
 import Registro from "components/registro";
-
 
 
 
