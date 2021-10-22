@@ -13,7 +13,7 @@ import Gestion from "pages/gestion";
 import Admin from "pages/Admin";
 import Login from "pages/login";
 import Registro from "components/registro";
-
+import Usuario from "pages/usuario";
 
 
 
@@ -22,9 +22,12 @@ function App() {
   return ( /*Aca se incluiran todas las paginas de nuestro sitio web */
     <Router>
       <Switch>
-        <Route path={['/admin', '/admin/producto', '/admin/ventas', '/admin/gestionUsuarios']}>
+        <Route path={['/admin', '/admin/producto', '/admin/ventas', '/admin/gestionUsuarios', '/admin/usuario']}>
           <LayoutPrivado>
             <Switch>
+              <Route path="/admin/usuario">
+                <Usuario/>
+              </Route>
               <Route path="/admin/producto">
                 <Producto />
               </Route>

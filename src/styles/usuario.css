@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.formu_titulo{
+    text-align: center;
+    font-size: 1.85rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    
+}
+
+.formu_edit{
+    margin: auto;
+    flex-direction: column;
+    height: 74vh;
+    width: 60vh;
+    border-radius: 15px;
+    background-color: #369bd6;
+    color: white;
+}
+
+.formu_edit label{
+    display: block;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.formu_titulo{
+    color: #369bd6;
+    margin-top: -48px;
+
+    
+}
+
+.formu_edit_caja{
+    text-align: center;
+}
+
+.formu_edit_usuario{
+    text-align: center;
+}
+
+.formu_edit_caja input{
+    background-color:white;
+    width:80%;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+}
+
+.formularioRegistro select{
+    flex-direction: column;
+    margin: auto;
+    display: block;
+}
+
+.formu_edit_usuario2{
+    text-align: center;
+    padding-top: 0.8rem;
+}
+
+.boton_modif{
+    padding: 8px 30px;
+    margin-top: 5px;
+    margin-left: 88px;
+    background:white;
+    color: #369bd6;
+    font-weight: 600;
+    border: none;
+    margin: 5px 20px 0px 75px;
+    border-radius: 5px;
+}
+
+.boton_modif2{
+    padding: 8px 30px;
+    background: white;
+    color: #369bd6;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+
+}
