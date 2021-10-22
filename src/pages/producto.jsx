@@ -52,12 +52,12 @@ const Producto = () => {
   
     const form =useRef(null);
   
-  
+  /*
     const [id, setId] = useState('');
     const [nombre, setNombre] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [valor, setValor] = useState('');
-    const [estado, setEstado] = useState(''); 
+    const [estado, setEstado] = useState('');  */
   
   
   
@@ -74,27 +74,15 @@ const Producto = () => {
   
     return (
       <form action="" ref={form} onSubmit={submitFrom}>
-        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  value={id}
-        onChange={(e)=>{
-          setId(e.target.value);
-        }} />
+        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  />
         <br />
-        <input className="datos" type="text" name='nombre' placeholder="Ingrese el Nombre" required value={nombre}
-        onChange={(e)=>{
-          setNombre(e.target.value);
-        }} />
+        <input className="datos" type="text" name='nombre' placeholder="Ingrese el Nombre" required />
         <br />
-        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción" value={descripcion}required
-        onChange={(e)=>{
-          setDescripcion(e.target.value);
-        }} />
+        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción"  required/>
         <br />
-        <input className="datos" type="text" name='valor' min={0}  max={6} placeholder="Ingrese el Valor Unitario" required  value={valor}
-        onChange={(e)=>{
-          setValor(e.target.value);
-        }} />
+        <input className="datos" type="text" name='valor' min={0}  max={6} placeholder="Ingrese el Valor Unitario" required/>
         <br />
-        <select className="multi" name='estado' required onChange={(e)=>{setEstado(e.target.value);}}>
+        <select className="multi" name='estado' required>
   
   
           <option>Seleccione</option>
