@@ -17,7 +17,7 @@ const Gestion = () => {
                             <label for="nombre">Nombre</label>
                             <input type="text" id="nombre" placeholder="Ingrese el nombre" />
                         </div>
-    
+
                         <div className="carUser-datos">
                             <p>
                                 Rol: <br />
@@ -27,7 +27,7 @@ const Gestion = () => {
                                 </select>
                             </p>
                         </div>
-    
+
                         <div className="carUser-datos">
                             <p>
                                 Estado: <br />
@@ -38,7 +38,7 @@ const Gestion = () => {
                                 </select>
                             </p>
                         </div>
-    
+
                     </form>
                 </div>
                 <div className="carUser-modificar">
@@ -49,8 +49,18 @@ const Gestion = () => {
         )
     }
     const VerTabla = () => {
-        return(
-            <div className="tablaUsuarios">
+        return (
+
+            <div>
+                <div>
+                    <input className="Actualizar" type="text" value="Actualizar" />
+                </div>
+
+                <div className="buscadorp">
+                    <input type="text" placeholder="Buscar" required />
+                    <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+                </div>
+                <div className="tablaUsuarios">
                     <table className="tabla--Usuarios">
                         <tr>
                             <th >Nombre </th>
@@ -58,14 +68,14 @@ const Gestion = () => {
                             <th >Correo</th>
                             <th >Estado</th>
                         </tr>
-    
+
                         <tr>
                             <td>Juan Fernando</td>
                             <td >Administrador</td>
                             <td >Juanfed12345@gmail.com</td>
                             <td>Autorizado</td>
                         </tr>
-    
+
                         <tr>
                             <td>Cristian Camilo</td>
                             <td>Vendedor</td>
@@ -74,9 +84,12 @@ const Gestion = () => {
                         </tr>
                     </table>
                 </div>
+
+            </div>
+
         )
-    
-    
+
+
     }
 
     const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -93,14 +106,14 @@ const Gestion = () => {
     return (
         <div id="contenido-gestion">
             <center>
-                <h2 onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</h2>
+                <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
                 <br />
                 <div>
-                    {mostrarTabla ? (<VerTabla/>) : (<GestionUsuarios/>) }
+                    {mostrarTabla ? (<VerTabla />) : (<GestionUsuarios />)}
                 </div>
             </center>
-            
-            
+
+
         </div>
     )
 }

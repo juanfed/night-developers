@@ -49,86 +49,99 @@ const Producto = () => {
     crearDato,
     listaProductos
   }) => {
-  
-    const form =useRef(null);
-  
-    const submitFrom = (e)=>{
+
+    const form = useRef(null);
+
+    const submitFrom = (e) => {
       e.preventDefault(); // me mostrará una advertencia para llenar los campos
       const fd = new FormData(form.current);
       const nuevoProducto = {};
-  
-      fd.forEach((value, key) =>{
+
+      fd.forEach((value, key) => {
         nuevoProducto[key] = value;
       });
       setProductos([...listaProductos, nuevoProducto]);
     }
-  
+
     return (
       <form action="" ref={form} onSubmit={submitFrom}>
-        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  />
+        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required />
         <br />
         <input className="datos" type="text" name='nombre' placeholder="Ingrese el nombre" required />
         <br />
-        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción"  required/>
+        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción" required />
         <br />
-        <input className="datos" type="text" name='valor' min={0}  max={6} placeholder="Ingrese el Valor Unitario" required/>
+        <input className="datos" type="text" name='valor' min={0} max={6} placeholder="Ingrese el Valor Unitario" required />
         <br />
         <select className="multi" name='estado' required>
-  
-  
+
+
           <option>Seleccione</option>
           <option>Disponible</option>
           <option>Agotado</option>
-  
+
         </select>
-  
+
         <br />
         <br />
-  
-        <button  className="botoness" type="submit">Registrar</button>
-        <button  className="botoness" type="reset">Limpiar</button>
+
+        <button className="botoness" type="submit">Registrar</button>
+        <button className="botoness" type="reset">Limpiar</button>
       </form>
     )
   }
-  
-  const ListaProductos = ({ listaCelulares}) => {
-    useEffect(()=>{
-      console.log("se supone que deberia de mostrarse en consola",listaCelulares);
-    }, [listaCelulares] )
-    return ( 
-      <table> 
-        <tr>
-          <th >ID</th>
-          <th >Producto</th>
-          <th >Descripción</th>
-          <th >Valor Unitario</th>
-          <th >Estado</th>
-        </tr>
-        <tbody>
-          {listaCelulares.map((producto)=>{
-            return(
-              <tr>
-                <td>{producto.id}</td>
-                <td>{producto.nombre}</td>
-                <td>{producto.descripcion}</td>
-                <td>{producto.valor}</td>
-                <td>{producto.estado}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+
+  const ListaProductos = ({ listaCelulares }) => {
+    useEffect(() => {
+      console.log("se supone que deberia de mostrarse en consola", listaCelulares);
+    }, [listaCelulares])
+    return (
+      <div>
+        <div>
+          <input className="Actualizar" type="text" value="Actualizar" />
+        </div>
+
+        <div className="buscadorp">
+          <input type="text" placeholder="Buscar" required />
+          <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+        </div>
+        <table>
+          <tr>
+            <th >ID</th>
+            <th >Producto</th>
+            <th >Descripción</th>
+            <th >Valor Unitario</th>
+            <th >Estado</th>
+          </tr>
+          <tbody>
+            {listaCelulares.map((producto) => {
+              return (
+                <tr>
+                  <td>{producto.id}</td>
+                  <td>{producto.nombre}</td>
+                  <td>{producto.descripcion}</td>
+                  <td>{producto.valor}</td>
+                  <td>{producto.estado}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+
     )
   }
 
-  return (
+  return ( /** return del render de la lista de los productos */
     <div>
       <div id="contenido__producto">
         <center>
           <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
           <div>
-            {mostrarTabla ? (<ListaProductos listaCelulares={productos}/>) : (<AgregarProducto 
-            crearDato={setProductos} listaProductos={productos}/>)}
+
+            {mostrarTabla ? (<ListaProductos listaCelulares={productos} />) : (<AgregarProducto
+              crearDato={setProductos} listaProductos={productos} />)}
           </div>
         </center>
       </div>
