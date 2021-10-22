@@ -9,15 +9,10 @@ import {
 import LayoutPrivado from "layouts/LayoutPrivado";
 import LayoutRegistro from "layouts/LayoutRegistro";
 import Producto from "pages/producto";
-import Ventas from "pages/ventas";
-
-import Index from 'pages/index';
 import Login from 'pages/login';
-import Producto from 'pages/producto';
 import Ventas from 'pages/ventas';
 import Gestion from "pages/gestion";
 import Admin from "pages/Admin";
-import Login from "pages/login";
 import Registro from "components/registro";
 import Usuario from "pages/usuario";
 

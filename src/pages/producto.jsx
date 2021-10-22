@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 function Producto() {
   return (
     <div>
-      <Header />
       <div id="contenido__producto">
 
         <form onsubmit="myFunction(); return false;" required />
