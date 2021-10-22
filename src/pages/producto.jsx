@@ -52,15 +52,6 @@ const Producto = () => {
   
     const form =useRef(null);
   
-  /*
-    const [id, setId] = useState('');
-    const [nombre, setNombre] = useState('');
-    const [descripcion, setDescripcion] = useState('');
-    const [valor, setValor] = useState('');
-    const [estado, setEstado] = useState('');  */
-  
-  
-  
     const submitFrom = (e)=>{
       e.preventDefault(); // me mostrará una advertencia para llenar los campos
       const fd = new FormData(form.current);
@@ -76,7 +67,7 @@ const Producto = () => {
       <form action="" ref={form} onSubmit={submitFrom}>
         <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  />
         <br />
-        <input className="datos" type="text" name='nombre' placeholder="Ingrese el Nombre" required />
+        <input className="datos" type="text" name='nombre' placeholder="Ingrese el nombre" required />
         <br />
         <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción"  required/>
         <br />
