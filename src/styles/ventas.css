@@ -75,4 +75,33 @@ table, th, td {
 .Titulo-producto{
     font-size: 35px;
 }
+
+.buscador{
+    margin-left: 785px;
+    padding: 5px;
+    
+}
+    
+.buscador input{
+    width: 240px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: rgb(10, 10, 10);
+    outline: none;
+    border-radius: 5px;
+    
+}
+
+.buscar-boton{
+    display:inline;
+    width: 80px;
+    height: 35px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background: #48cae8;
+    color: white;
+
+}
     
