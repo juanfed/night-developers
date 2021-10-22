@@ -5,18 +5,16 @@ import {
   Route,
 } from "react-router-dom";
 
-<<<<<<< HEAD
+
 import LayoutPrivado from "layouts/LayoutPrivado";
 import LayoutRegistro from "layouts/LayoutRegistro";
 import Producto from "pages/producto";
 import Ventas from "pages/ventas";
-=======
 
 import Index from 'pages/index';
 import Login from 'pages/login';
 import Producto from 'pages/producto';
 import Ventas from 'pages/ventas';
->>>>>>> e0dc71b1264400c744782e81819073bfb5d4c04c
 import Gestion from "pages/gestion";
 import Admin from "pages/Admin";
 import Login from "pages/login";
