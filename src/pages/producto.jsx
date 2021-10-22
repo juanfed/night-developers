@@ -1,5 +1,5 @@
 import 'styles/producto.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const listaProductos = [
   {
@@ -45,6 +45,103 @@ const Producto = () => {
     setProductos(listaProductos);
   }, [listaProductos]);
 
+  const AgregarProducto = ({
+    crearDato,
+    listaProductos
+  }) => {
+  
+    const form =useRef(null);
+  
+  
+    const [id, setId] = useState('');
+    const [nombre, setNombre] = useState('');
+    const [descripcion, setDescripcion] = useState('');
+    const [valor, setValor] = useState('');
+    const [estado, setEstado] = useState(''); 
+  
+  
+  
+    const submitFrom = (e)=>{
+      e.preventDefault(); // me mostrará una advertencia para llenar los campos
+      const fd = new FormData(form.current);
+      const nuevoProducto = {};
+  
+      fd.forEach((value, key) =>{
+        nuevoProducto[key] = value;
+      });
+      setProductos([...listaProductos, nuevoProducto]);
+    }
+  
+    return (
+      <form action="" ref={form} onSubmit={submitFrom}>
+        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  value={id}
+        onChange={(e)=>{
+          setId(e.target.value);
+        }} />
+        <br />
+        <input className="datos" type="text" name='nombre' placeholder="Ingrese el Nombre" required value={nombre}
+        onChange={(e)=>{
+          setNombre(e.target.value);
+        }} />
+        <br />
+        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción" value={descripcion}required
+        onChange={(e)=>{
+          setDescripcion(e.target.value);
+        }} />
+        <br />
+        <input className="datos" type="text" name='valor' min={0}  max={6} placeholder="Ingrese el Valor Unitario" required  value={valor}
+        onChange={(e)=>{
+          setValor(e.target.value);
+        }} />
+        <br />
+        <select className="multi" name='estado' required onChange={(e)=>{setEstado(e.target.value);}}>
+  
+  
+          <option>Seleccione</option>
+          <option>Disponible</option>
+          <option>Agotado</option>
+  
+        </select>
+  
+        <br />
+        <br />
+  
+        <button  className="botoness" type="submit">Registrar</button>
+        <button  className="botoness" type="reset">Limpiar</button>
+      </form>
+    )
+  }
+  
+  const ListaProductos = ({ listaCelulares}) => {
+    useEffect(()=>{
+      console.log("se supone que deberia de mostrarse en consola",listaCelulares);
+    }, [listaCelulares] )
+    return ( 
+      <table> 
+        <tr>
+          <th >ID</th>
+          <th >Producto</th>
+          <th >Descripción</th>
+          <th >Valor Unitario</th>
+          <th >Estado</th>
+        </tr>
+        <tbody>
+          {listaCelulares.map((producto)=>{
+            return(
+              <tr>
+                <td>{producto.id}</td>
+                <td>{producto.nombre}</td>
+                <td>{producto.descripcion}</td>
+                <td>{producto.valor}</td>
+                <td>{producto.estado}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    )
+  }
+
   return (
     <div>
       <div id="contenido__producto">
@@ -61,91 +158,5 @@ const Producto = () => {
 };
 export default Producto;
 
-const AgregarProducto = ({
-  crearDato,
-  listaProductos
-}) => {
 
-
-  const [id, setId] = useState('');
-  const [nombre, setNombre] = useState('');
-  const [descripcion, setDescripcion] = useState('');
-  const [valor, setValor] = useState('');
-  const [estado, setEstado] = useState('');
-
-  // aca la funcion para el envio de los datos al backend
-  const enviarDatos = ()=>{
-    console.log('id', id, 'nombre', nombre, 'descipcion', descripcion, 'valor', valor, 'estado', estado);
-    crearDato([...listaProductos,{id:id, nombre:nombre, descripcion:descripcion, valor:valor, estado:estado},]);
-  }
-
-  return (
-    <form action="">
-      <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  value={id}
-      onChange={(e)=>{
-        setId(e.target.value);
-      }} />
-      <br />
-      <input className="datos" type="text" name='nombre' placeholder="Ingrese el Nombre" required value={nombre}
-      onChange={(e)=>{
-        setNombre(e.target.value);
-      }} />
-      <br />
-      <input className="datos" type="text" name='descipcion' placeholder="Ingrese La Descripción" value={descripcion}required
-      onChange={(e)=>{
-        setDescripcion(e.target.value);
-      }} />
-      <br />
-      <input className="datos" type="text" name='valor' placeholder="Ingrese el Valor Unitario" required  value={valor}
-      onChange={(e)=>{
-        setValor(e.target.value);
-      }} />
-      <br />
-      <select className="multi" name='estado' required onChange={(e)=>{setEstado(e.target.value);}}>
-
-
-        <option>Seleccione</option>
-        <option>Disponible</option>
-        <option>Agotado</option>
-
-      </select>
-
-      <br />
-      <br />
-
-      <button  className="botoness" type="button" onClick={()=>{enviarDatos()}}>Registrar</button>
-      <button  className="botoness" type="reset">Limpiar</button>
-    </form>
-  )
-}
-
-const ListaProductos = ({ listaCelulares}) => {
-  useEffect(()=>{
-    console.log("se supone que deberia de mostrarse en consola",listaCelulares);
-  }, [listaCelulares] )
-  return ( 
-    <table> 
-      <tr>
-        <th >ID</th>
-        <th >Producto</th>
-        <th >Descripción</th>
-        <th >Valor Unitario</th>
-        <th >Estado</th>
-      </tr>
-      <tbody>
-        {listaCelulares.map((producto)=>{
-          return(
-            <tr>
-              <td>{producto.id}</td>
-              <td>{producto.nombre}</td>
-              <td>{producto.descripcion}</td>
-              <td>{producto.valor}</td>
-              <td>{producto.estado}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  )
-}
 
