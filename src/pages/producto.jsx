@@ -97,13 +97,14 @@ const Producto = () => {
     }, [listaCelulares])
     return (
       <div>
+        <div className="buscador_actu">
         <div>
-          <input className="Actualizar" type="text" value="Actualizar" />
+          <input className="Actuali_zar" type="text" value="Actualizar" />
+          <input className="Busca_dor" type="text" placeholder="Buscar" required />
+          <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
         </div>
 
-        <div className="buscadorp">
-          <input type="text" placeholder="Buscar" required />
-          <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+        
         </div>
         <table>
           <tr>
