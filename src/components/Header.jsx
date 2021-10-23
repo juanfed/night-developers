@@ -30,7 +30,7 @@ function Header(){
 
                     <div>
                         <a href="#" className="nav__logo">
-                        <i className='bx bx-layer' nav__logo-icon></i>
+                        <i className='bx bx-layer'></i>
                         <Link to="/admin"><span className="nav__logo-name">Inicio</span></Link>
                         </a>
 

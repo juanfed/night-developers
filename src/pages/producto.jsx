@@ -1,5 +1,8 @@
 import 'styles/producto.css';
 import React, { useState, useEffect, useRef } from 'react';
+import { nanoid } from 'nanoid';
+
+
 
 const listaProductos = [
   {
@@ -49,65 +52,69 @@ const Producto = () => {
     crearDato,
     listaProductos
   }) => {
-  
-    const form =useRef(null);
-  
-    const submitFrom = (e)=>{
+
+    const form = useRef(null);
+
+    const submitFrom = (e) => {
       e.preventDefault(); // me mostrará una advertencia para llenar los campos
       const fd = new FormData(form.current);
       const nuevoProducto = {};
-  
-      fd.forEach((value, key) =>{
+
+      fd.forEach((value, key) => {
         nuevoProducto[key] = value;
       });
+
+
       setProductos([...listaProductos, nuevoProducto]);
     }
-  
+
     return (
       <form action="" ref={form} onSubmit={submitFrom}>
-        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required  />
+        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required />
         <br />
         <input className="datos" type="text" name='nombre' placeholder="Ingrese el nombre" required />
         <br />
-        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción"  required/>
+        <input className="datos" type="text" name='descripcion' placeholder="Ingrese La Descripción" required />
         <br />
-        <input className="datos" type="text" name='valor' min={0}  max={6} placeholder="Ingrese el Valor Unitario" required/>
+        <input className="datos" type="text" name='valor' min={0} max={6} placeholder="Ingrese el Valor Unitario" required />
         <br />
         <select className="multi" name='estado' required>
-  
-  
+
+
           <option>Seleccione</option>
           <option>Disponible</option>
           <option>Agotado</option>
-  
+
         </select>
-  
+
         <br />
         <br />
-  
-        <button  className="botoness" type="submit">Registrar</button>
-        <button  className="botoness" type="reset">Limpiar</button>
+
+        <button className="botoness" type="submit">Registrar</button>
+        <button className="botoness" type="reset">Limpiar</button>
       </form>
     )
   }
-  
-  const ListaProductos = ({ listaCelulares}) => {
-    useEffect(()=>{
-      console.log("se supone que deberia de mostrarse en consola",listaCelulares);
-    }, [listaCelulares] )
-    return ( 
-      <table> 
-        <tr>
-          <th >ID</th>
-          <th >Producto</th>
-          <th >Descripción</th>
-          <th >Valor Unitario</th>
-          <th >Estado</th>
-        </tr>
+
+  const ListaProductos = ({ listaCelulares }) => {
+    useEffect(() => {
+      console.log("se supone que deberia de mostrarse en consola", listaCelulares);
+    }, [listaCelulares])
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th >ID</th>
+            <th >Producto</th>
+            <th >Descripción</th>
+            <th >Valor Unitario</th>
+            <th >Estado</th>
+          </tr>
+        </thead>
         <tbody>
-          {listaCelulares.map((producto)=>{
-            return(
-              <tr>
+          {listaCelulares.map((producto) => {
+            return (
+              <tr key={nanoid()}>
                 <td>{producto.id}</td>
                 <td>{producto.nombre}</td>
                 <td>{producto.descripcion}</td>
@@ -127,8 +134,8 @@ const Producto = () => {
         <center>
           <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
           <div>
-            {mostrarTabla ? (<ListaProductos listaCelulares={productos}/>) : (<AgregarProducto 
-            crearDato={setProductos} listaProductos={productos}/>)}
+            {mostrarTabla ? (<ListaProductos listaCelulares={productos} />) : (<AgregarProducto
+              crearDato={setProductos} listaProductos={productos} />)}
           </div>
         </center>
       </div>
