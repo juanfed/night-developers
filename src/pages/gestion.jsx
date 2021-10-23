@@ -64,34 +64,34 @@ const Gestion = () => {
                 <div className="carUser-formulario">
                     <form action="" ref={form} onSubmit={submitFrom}>
                         <div className="carUser-datos">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" required />
+                            <p class="titles_for"> Nombre <br /></p>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese El Nombre" required />
                         </div>
 
                         <div className="carUser-datos">
-                            <label for="nombre">Correo</label>
-                            <input type="email" id="correo" name="correo" placeholder="Ingrese el correo" required />
+                            <p class="titles_for"> Correo </p>
+                            <input type="email" id="correo" name="correo" placeholder="Ingrese El Correo" required />
                         </div>
 
                         <div className="carUser-datos">
-                            <p>
-                                Rol: <br />
-                                <select name="rol">
-                                    <option >Administrador</option>
-                                    <option>Vendedor</option>
-                                </select>
-                            </p>
+                            <p className="titles_for"> Rol: </p>
+                            <select className="Select_formu" name="rol">
+                                <option >Seleccione</option>
+                                <option >Administrador</option>
+                                <option>Vendedor</option>
+                            </select>
+
                         </div>
 
                         <div className="carUser-datos">
-                            <p>
-                                Estado: <br />
-                                <select name="estado">
-                                    <option >Pendiente</option>
-                                    <option>Autorizado</option>
-                                    <option>No Autorizado</option>
-                                </select>
-                            </p>
+                            <p class="titles_for"> Estado <br /></p>
+                            <select className="Select_formu" name="estado">
+                                <option >Seleccione</option>
+                                <option >Pendiente</option>
+                                <option>Autorizado</option>
+                                <option>No Autorizado</option>
+                            </select>
+
                         </div>
 
                         <div className="carUser-modificar">
