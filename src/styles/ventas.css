@@ -3,7 +3,7 @@ table, th, td {
     margin: 25px; 
     border:2px solid black (5, 236, 213);
     border-collapse: collapse;
-    color:black;background-color:peru;
+    color:black;background-color:#686D76;
     text-align: center;
     }
     body{
@@ -75,4 +75,57 @@ table, th, td {
 .Titulo-producto{
     font-size: 35px;
 }
+
+.buscador_actu{
+display:inline-block;
+margin-left: 20px;
+}
+
+.Actuali_zar{
+cursor: pointer;
+border-radius: 5px;
+text-align: center;
+width: 100px;
+height: 35px;
+margin:20px;
+background-color:gray;
+color: white;
+}
+
+.Actuali_zar:hover{
+transform: scale(1.1);
+color:black;
+background-color: white;
+
+}
+
+.buscar-botonp{
+text-align: center;
+width: 100px;
+height: 35px;
+margin:20px;
+cursor: pointer;
+border-radius: 5px;
+background-color: #48cae8;
+font:bold;
+color:white;
+
+}
+
+.buscar-botonp:hover{
+transform: scale(1.1);
+color:black;
+background-color: white;
+
+}
+
+.Busca_dor{
+border-radius: 5px;
+width: 250px;
+height: 30px;
+margin:20px;
+
+}
+
+
     

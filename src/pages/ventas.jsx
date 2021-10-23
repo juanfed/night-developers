@@ -1,66 +1,146 @@
-import React from 'react';
 import 'styles/ventas.css';
+import React, { useState, useEffect, useRef } from 'react';
 
-const ventas = () => {
+const lista_Ventas = [
+  {
+    id: "58959",
+    precio: "560.000",
+    cantidad: "3",
+    comprador: "Juan",
+    estado: "en proceso"
+  },
+  
+
+]
+
+const Ventas = () => {
+  const [mostrarTabla, setMostrarTabla] = useState(true);
+  const [ventas, setVentas] = useState([]);
+  const [titulo, setTitulo] = useState('Agregar Producto');
+
+  useEffect(() => {
+    if (mostrarTabla) {
+      setTitulo('Agregar venta');
+    } else {
+      setTitulo('Ver Lista de Ventas');
+    }
+
+  }, [mostrarTabla]);
+
+  useEffect(() => {
+    // aca obtendré la lista de los prouctos desde el backend
+    setVentas(lista_Ventas);
+  }, [lista_Ventas]);
+
+  const AgregarVenta = ({
+    crearDato,
+    listaVentas
+  }) => {
+
+    const form = useRef(null);
+
+    const submitFrom = (e) => {
+      e.preventDefault(); // me mostrará una advertencia para llenar los campos
+      const fd = new FormData(form.current);
+      const nuevoVenta = {};
+
+      fd.forEach((value, key) => {
+        nuevoVenta[key] = value;
+      });
+      setVentas([...listaVentas, nuevoVenta]);
+    }
+
     return (
-        <div className="contenido">
-            <center>
-                <p className="Titulo-producto">Gestion de Ventas</p>
+      <form action="" ref={form} onSubmit={submitFrom}>
+        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required />
+        <br />
+        <input className="datos" type="text" name='precio' placeholder="Ingrese el nombre" required />
+        <br />
+        <input className="datos" type="text" name='cantidad' placeholder="Ingrese La Descripción" required />
+        <br />
+        <input className="datos" type="text" name='comprador' min={0} max={6} placeholder="Ingrese el Valor Unitario" required />
+        <br />
+        <select className="multi" name='estado' required>
 
-                <thead className="contenidoProducto">
-                    <div id="div">
-                        <p>Productos</p>
-                        <select id="productos" class="caja">
-                            <option value="">Productos</option>
-                            <option value="laptos">Laptos</option>
-                            <option value="Tablec">Tablec</option>
-                        </select>
-                    </div>
 
-                    <div id="div">
-                        <p>Precio</p>
-                        <input type="text" id="precio" class="caja" />
-                    </div>
+          <option>Seleccione</option>
+          <option>En proceso</option>
+          <option>Entregado</option>
 
-                    <div id="div">
-                        <p>Cantidad</p>
-                        <input type="text" id="cantidad" class="caja" />
-                    </div>
-                </thead>
+        </select>
 
-                <button type="button" name="name" id="buttom" onclick="agregar()" alerta="Guardado con exito" className="ventas-boton-agregar">Agregar</button>
-                <table id="info">
+        <br/>
+        <br/>
 
-                    <thead>
 
-                        <tr>
-                            <th>ID Venta</th>
-                            <th>precio</th>
-                            <th>cantidad</th>
-                            <th>Comprador</th>
-                            <th>Estado</th>
 
-                        </tr>
-                        <tr>
-                            <td>V01</td>
-                            <td >1.500.000</td>
-                            <td >2</td>
-                            <td >Carlos</td>
-                            <td >En proceso</td>
-                        </tr>
-                        <tr>
-                            <td>V02</td>
-                            <td >750.000</td>
-                            <td >1</td>
-                            <td >Juan</td>
-                            <td >Cancelado</td>
-                        </tr>
-
-                    </thead>
-                </table>
-            </center>
-        </div>
+        <button className="botoness" type="submit">Registrar</button>
+        <button className="botoness" type="reset">Limpiar</button>
+      </form>
     )
-}
+  }
 
-export default ventas
+  const ListaVentas = ({ lista_ventas }) => {
+    useEffect(() => {
+      console.log("se supone que deberia de mostrarse en consola", lista_ventas);
+    }, [lista_ventas])
+    return (
+        
+      <div>
+        <div className="buscador_actu">
+        <div>
+          <input className="Actuali_zar" type="text" value="Actualizar" />
+          <input className="Busca_dor" type="text" placeholder="Buscar" required />
+          <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+        </div>
+
+        
+        </div>
+        
+        <table>
+          <tr>
+            <th >ID</th>
+            <th >Precio</th>
+            <th >Cantidad</th>
+            <th >Comprador</th>
+            <th >Estado</th>
+          </tr>
+          <tbody>
+            {lista_ventas.map((Venta) => {
+              return (
+                <tr>
+                  <td>{Venta.id}</td>
+                  <td>{Venta.precio}</td>
+                  <td>{Venta.cantidad}</td>
+                  <td>{Venta.comprador}</td>
+                  <td>{Venta.estado}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+
+    )
+  }
+
+  return ( /** return del render de la lista de las ventas */
+    <div>
+      <div id="contenido__Venta">
+        <center>
+          <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
+          <div>
+
+            {mostrarTabla ? (<ListaVentas lista_ventas={ventas} />) : (<AgregarVenta
+              crearDato={setVentas} listaVentas={ventas} />)}
+          </div>
+        </center>
+      </div>
+    </div>
+  )
+};
+export default Ventas;
+
+
+

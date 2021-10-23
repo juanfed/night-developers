@@ -35,7 +35,7 @@ cursor: pointer;
 background-color: #2d84e7;
 color: white;
 }
-
+ 
  input.botoness:hover{
 background-color: #355baf; 
 
@@ -62,3 +62,20 @@ background-color: #355baf;
  .Titulo-producto{
      font-size: 35px;
  }
+
+ .buscadorp{
+    
+    display:inline-block;
+    
+}
+
+ .buscadorp input{
+    width: 240px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: rgb(10, 10, 10);
+    outline: none;
+    border-radius: 5px;
+    
+}

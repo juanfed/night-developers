@@ -1,11 +1,12 @@
 import 'styles/gestion.css';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
-const gestion = () => {
-    return (
-        <div id="contenido-gestion">
+const Gestion = () => {
+
+    const GestionUsuarios = () => {
+        return (
             <div className="carUser">
                 <div className="carUser-img">
                     <i className='bx bx-user-circle' ></i>
@@ -45,34 +46,78 @@ const gestion = () => {
                     <button className="botonCarUser">Eliminar</button>
                 </div>
             </div>
-            <br />
-            <div className="tablaUsuarios">
-                <table className="tabla--Usuarios">
-                    <tr>
-                        <th >Nombre </th>
-                        <th >Rol</th>
-                        <th >Correo</th>
-                        <th >Estado</th>
-                    </tr>
+        )
+    }
+    const VerTabla = () => {
+        return (
 
-                    <tr>
-                        <td>Juan Fernando</td>
-                        <td >Administrador</td>
-                        <td >Juanfed12345@gmail.com</td>
-                        <td>Autorizado</td>
-                    </tr>
+            <div>
+                <div className="buscador_actu">
+                    <div>
+                        <input className="Actuali_zar" type="text" value="Actualizar" />
+                        <input className="Busca_dor" type="text" placeholder="Buscar" required />
+                        <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+                    </div>
 
-                    <tr>
-                        <td>Cristian Camilo</td>
-                        <td>Vendedor</td>
-                        <td>CristianCami@outlook.com</td>
-                        <td>Pendiente</td>
-                    </tr>
-                </table>
+
+                </div>
+                <div className="tablaUsuarios">
+                    <table className="tabla--Usuarios">
+                        <tr>
+                            <th >Nombre </th>
+                            <th >Rol</th>
+                            <th >Correo</th>
+                            <th >Estado</th>
+                        </tr>
+
+                        <tr>
+                            <td>Juan Fernando</td>
+                            <td >Administrador</td>
+                            <td >Juanfed12345@gmail.com</td>
+                            <td>Autorizado</td>
+                        </tr>
+
+                        <tr>
+                            <td>Cristian Camilo</td>
+                            <td>Vendedor</td>
+                            <td>CristianCami@outlook.com</td>
+                            <td>Pendiente</td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
+
+        )
+
+
+    }
+
+    const [mostrarTabla, setMostrarTabla] = useState(true);
+    const [titulo, setTitulo] = useState("Agregar usuario");
+
+    useEffect(() => {
+        if (mostrarTabla) {
+            setTitulo("Agregar usuario");
+        } else {
+            setTitulo("Ver lista de usuarios");
+        }
+    }, [mostrarTabla]);
+
+    return (
+        <div id="contenido-gestion">
+            <center>
+                <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
+                <br />
+                <div>
+                    {mostrarTabla ? (<VerTabla />) : (<GestionUsuarios />)}
+                </div>
+            </center>
+
+
         </div>
     )
 }
 
-export default gestion
+export default Gestion;
 

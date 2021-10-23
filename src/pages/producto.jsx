@@ -101,48 +101,57 @@ const Producto = () => {
       console.log("se supone que deberia de mostrarse en consola", listaCelulares);
     }, [listaCelulares])
     return (
-      <table>
-        <thead>
-          <tr>
-            <th >ID</th>
-            <th >Producto</th>
-            <th >Descripción</th>
-            <th >Valor Unitario</th>
-            <th >Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {listaCelulares.map((producto) => {
-            return (
-              <tr key={nanoid()}>
-                <td>{producto.id}</td>
-                <td>{producto.nombre}</td>
-                <td>{producto.descripcion}</td>
-                <td>{producto.valor}</td>
-                <td>{producto.estado}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    )
+      <div>
+        <div className="buscador_actu">
+          <div>
+            <input className="Actuali_zar" type="text" value="Actualizar" />
+            <input className="Busca_dor" type="text" placeholder="Buscar" required />
+            <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+          </div>
+
+
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th >ID</th>
+              <th >Producto</th>
+              <th >Descripción</th>
+              <th >Valor Unitario</th>
+              <th >Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listaCelulares.map((producto) => {
+              return (
+                <tr key={nanoid()}>
+                  <td>{producto.id}</td>
+                  <td>{producto.nombre}</td>
+                  <td>{producto.descripcion}</td>
+                  <td>{producto.valor}</td>
+                  <td>{producto.estado}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+        )
   }
 
-  return (
-    <div>
-      <div id="contenido__producto">
-        <center>
-          <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
-          <div>
-            {mostrarTabla ? (<ListaProductos listaCelulares={productos} />) : (<AgregarProducto
-              crearDato={setProductos} listaProductos={productos} />)}
+        return ( /** return del render de la lista de los productos */
+        <div>
+          <div id="contenido__producto">
+            <center>
+              <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
+              <div>
+                {mostrarTabla ? (<ListaProductos listaCelulares={productos} />) : (<AgregarProducto
+                  crearDato={setProductos} listaProductos={productos} />)}
+              </div>
+            </center>
           </div>
-        </center>
-      </div>
-    </div>
-  )
+        </div>
+        )
 };
+
 export default Producto;
-
-
-
