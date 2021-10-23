@@ -23,25 +23,25 @@ const usuario =()=>{
 
                     <div className="formu_edit_caja">
                         <label for="NombreEdit">Nombre:</label>
-                        <input type="text" id="NombreEdit" required/>
+                        <input type="text" id="NombreEdit"/>
 
                     </div>
 
                     <div className="formu_edit_caja">
                         <label for="ApellidoEdit">Apellido:</label>
-                        <input type="text" id="ApedilloEdit" required/>
+                        <input type="text" id="ApedilloEdit"/>
 
                     </div>
 
                     <div className="formu_edit_caja">
                         <label for="CorreoEdit">Correo:</label>
-                        <input type="text" id="CorreoEdit" required/>
+                        <input type="text" id="CorreoEdit"/>
 
                     </div>
 
                     <div className="formu_edit_caja">
                         <label for="ContraseñaEdit">Contraseña:</label>
-                        <input type="text" id="ContraseñaEdit" required/>
+                        <input type="text" id="ContraseñaEdit"/>
 
                     </div>
                     
