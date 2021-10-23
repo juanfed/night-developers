@@ -104,7 +104,7 @@ const Producto = () => {
       <div>
         <div className="buscador_actu">
           <div>
-            <input className="Actuali_zar" type="text" value="Actualizar" />
+            <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
             <input className="Busca_dor" type="text" placeholder="Buscar" required />
             <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
           </div>
@@ -136,22 +136,22 @@ const Producto = () => {
           </tbody>
         </table>
       </div>
-        )
+    )
   }
 
-        return ( /** return del render de la lista de los productos */
-        <div>
-          <div id="contenido__producto">
-            <center>
-              <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
-              <div>
-                {mostrarTabla ? (<ListaProductos listaCelulares={productos} />) : (<AgregarProducto
-                  crearDato={setProductos} listaProductos={productos} />)}
-              </div>
-            </center>
+  return ( /** return del render de la lista de los productos */
+    <div>
+      <div id="contenido__producto">
+        <center>
+          <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
+          <div>
+            {mostrarTabla ? (<ListaProductos listaCelulares={productos} />) : (<AgregarProducto
+              crearDato={setProductos} listaProductos={productos} />)}
           </div>
-        </div>
-        )
+        </center>
+      </div>
+    </div>
+  )
 };
 
 export default Producto;

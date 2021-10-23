@@ -2,6 +2,7 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
     font-size: 2rem;
+    cursor:pointer ;
 }
 table, th, td {    
 margin: 25px; 
