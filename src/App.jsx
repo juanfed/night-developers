@@ -13,6 +13,8 @@ import Gestion from "pages/gestion";
 import Admin from "pages/Admin";
 import Login from "pages/Login";
 import Registro from "components/registro";
+import LayoutPublico from "layouts/LayoutPublico";
+import HeaderPublico from "components/HeaderPublico";
 
 
 
@@ -51,6 +53,15 @@ function App() {
               </Route>
             </Switch>
           </LayoutRegistro>
+        </Route>
+        <Route path={['/']}>
+          <LayoutPublico>
+            <Switch>
+              <Route path='/'>
+                <HeaderPublico />
+              </Route>
+            </Switch>
+          </LayoutPublico>
         </Route>
       </Switch>
     </Router>
