@@ -115,31 +115,30 @@ const Producto = () => {
   };
 
   const ListaProductos = ({ listaCelulares }) => {
+    //buqueda
+    const [busqueda, setBusqueda] = useState('');
+    const [celularesFiltrados, setCelularesFiltrados] = useState(listaCelulares)
+    useEffect (() =>{
+      setCelularesFiltrados(
+      listaCelulares.filter((elemento) =>{
+        return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+      }));
+    }, [busqueda, listaCelulares])
+
     useEffect(() => {
       console.log(
-        "se supone que deberia de mostrarse en consola",
+        "se supone que deberia de mostrarse en consola", 
         listaCelulares
-      );
+      ); 
     }, [listaCelulares]);
     return (
       <div>
         <div className="buscador_actu">
           <div>
             <input className="Actuali_zar" type="text" value="Actualizar" />
-            <input
-              className="Busca_dor"
-              type="text"
-              placeholder="Buscar"
-              required
-            />
-            <button
-              type="button"
-              name="name"
-              id="buttom"
-              className="buscar-botonp"
-            >
-              Buscar
-            </button>
+            <input className="Busca_dor" type="text" placeholder="Buscar" value={busqueda} 
+            onChange={(e) => setBusqueda(e.target.value)}/>
+            <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
           </div>
         </div>
         <table>
@@ -154,7 +153,7 @@ const Producto = () => {
             </tr>
           </thead>
           <tbody>
-            {listaCelulares.map((producto) => {
+            {celularesFiltrados.map((producto) => {
               return (
                 <tr key={nanoid()}>
                   <td>{producto.id}</td>
