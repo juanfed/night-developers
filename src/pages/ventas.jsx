@@ -56,9 +56,9 @@ const Ventas = () => {
         <br />
         <input className="datos" type="text" name='precio' placeholder="Ingrese el nombre" required />
         <br />
-        <input className="datos" type="text" name='cantidad' placeholder="Ingrese La Descripción" required />
+        <input className="datos" type="text" name='cantidad' placeholder="Ingrese La Cantidad" required />
         <br />
-        <input className="datos" type="text" name='comprador' min={0} max={6} placeholder="Ingrese el Valor Unitario" required />
+        <input className="datos" type="text" name='comprador'  placeholder="Ingrese el Comprador" required />
         <br />
         <select className="multi" name='estado' required>
 
@@ -89,7 +89,7 @@ const Ventas = () => {
       <div>
         <div className="buscador_actu">
         <div>
-          <input className="Actuali_zar" type="text" value="Actualizar" />
+          <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
           <input className="Busca_dor" type="text" placeholder="Buscar" required />
           <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
         </div>

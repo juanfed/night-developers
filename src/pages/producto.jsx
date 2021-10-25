@@ -60,7 +60,7 @@ const Producto = () => {
     };
 
     return (
-      <form action="" ref={form} onSubmit={submitFrom}>
+      <form action="" ref={form} onSubmit={submitFrom} className="formProducto">
         <input
           className="datos"
           type="text"

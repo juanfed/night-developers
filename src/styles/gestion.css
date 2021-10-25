@@ -2,8 +2,8 @@
 .carUser{
     border: 1px solid black;
     text-align: center;
-    height: 20rem;
-    width: 22rem;
+    height: 29rem;
+    width: 28rem;
     box-shadow: 4px 4px 3px 3px rgba(177, 187, 199, 0.507);
     background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
     margin: auto;
@@ -11,7 +11,7 @@
 
 
 .bx-user-circle{
-    font-size: 4rem;
+    font-size: 5rem;
     background-color: rgba(116, 154, 216, 0.486);
     border-radius: 100%;
 }
@@ -23,25 +23,27 @@
 
 .carUser-datos{
     position: relative;
-    margin: 0.9rem;
+    margin: 1.5rem;
+    font-weight: 40px;
 }
 
 .carUser-formulario input{
     background: none;
     font-size: 1.25rem;
     padding: 2px 2px 2px 1px;
-    border: none;
-    border-bottom: 1px solid rgb(70, 0, 182);
+    background-color: white;
+    border-radius: 5px;
     display: block;
     width: 100%;
 }
 
-#contenido-gestion{
-    padding-top: 1rem;
-}
 
 .carUser-modificar button{
     margin: 0.5rem 1rem 1rem 1rem;
+    width: 90px;
+    height: 35px;
+    border-radius: 8px;
+
 
 }
 
@@ -53,9 +55,22 @@
 transition-duration: 0.4s;
 cursor: pointer;
 background-color: #2d84e7;
-color: white;
+color: black;
+
 }
 
 .botonCarUser:hover{
-    background-color: #355baf; 
+    background-color: white; 
+    
+}
+
+.Select_formu{
+    height: 25px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.titles_for{
+    margin-bottom: 5px;
 }

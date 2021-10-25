@@ -1,60 +1,121 @@
 import 'styles/gestion.css';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { nanoid } from 'nanoid';
+
+const listaUsuarios = [
+    {
+        nombre: "Juan Camilo",
+        rol: "Administrador",
+        correo: "Juan@gmail.com",
+        estado: "Pendiente"
+    },
+]
 
 
 const Gestion = () => {
 
-    const GestionUsuarios = () => {
+    const [mostrarTabla, setMostrarTabla] = useState(true);
+    const [gestion, setGestion] = useState([]);
+    const [titulo, setTitulo] = useState("Gestionar Usuarios");
+
+    useEffect(() => {
+        if (mostrarTabla) {
+            setTitulo("Gestionar Usuarios");
+        } else {
+            setTitulo("Ver lista de usuarios");
+        }
+
+    }, [mostrarTabla]);
+
+    useEffect(() => {
+
+        setGestion(listaUsuarios);
+    }, [listaUsuarios]);
+
+
+    const AgregarUsuario = ({
+        crearDato,
+        listaUsuarios
+    }) => {
+        const form = useRef(null);
+
+        const submitFrom = (e) => {
+            e.preventDefault();
+            const fd = new FormData(form.current);
+            const nuevoUsuario = {};
+
+            fd.forEach((value, key) => {
+                nuevoUsuario[key] = value;
+            });
+
+            setGestion([...listaUsuarios, nuevoUsuario]);
+
+
+        }
+
+
+
         return (
             <div className="carUser">
                 <div className="carUser-img">
                     <i className='bx bx-user-circle' ></i>
                 </div>
                 <div className="carUser-formulario">
-                    <form action="">
+                    <form action="" ref={form} onSubmit={submitFrom}>
                         <div className="carUser-datos">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Ingrese el nombre" />
+                            <p class="titles_for"> Nombre <br /></p>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese El Nombre" required />
                         </div>
 
                         <div className="carUser-datos">
-                            <p>
-                                Rol: <br />
-                                <select name="Rol">
-                                    <option >Administrador</option>
-                                    <option>Vendedor</option>
-                                </select>
-                            </p>
+                            <p class="titles_for"> Correo </p>
+                            <input type="email" id="correo" name="correo" placeholder="Ingrese El Correo" required />
                         </div>
 
                         <div className="carUser-datos">
-                            <p>
-                                Estado: <br />
-                                <select name="Rol">
-                                    <option >Pendiente</option>
-                                    <option>Autorizado</option>
-                                    <option>No Autorizado</option>
-                                </select>
-                            </p>
+                            <p className="titles_for"> Rol: </p>
+                            <select className="Select_formu" name="rol">
+                                <option >Seleccione</option>
+                                <option >Administrador</option>
+                                <option>Vendedor</option>
+                            </select>
+
                         </div>
 
+                        <div className="carUser-datos">
+                            <p class="titles_for"> Estado <br /></p>
+                            <select className="Select_formu" name="estado">
+                                <option >Seleccione</option>
+                                <option >Pendiente</option>
+                                <option>Autorizado</option>
+                                <option>No Autorizado</option>
+                            </select>
+
+                        </div>
+
+                        <div className="carUser-modificar">
+                            <button type="submit" className="botonCarUser">Agregar</button>
+                            <button type="reset" className="botonCarUser">Eliminar</button>
+                        </div>
                     </form>
-                </div>
-                <div className="carUser-modificar">
-                    <button className="botonCarUser">Agregar</button>
-                    <button className="botonCarUser">Eliminar</button>
                 </div>
             </div>
         )
+
+
     }
-    const VerTabla = () => {
+
+    const ListaUsuarios = ({ listaPersonas }) => {
+        useEffect(() => {
+            console.log("aca me muestra algo", listaPersonas);
+        }, [listaPersonas])
         return (
 
             <div>
                 <div className="buscador_actu">
                     <div>
-                        <input className="Actuali_zar" type="text" value="Actualizar" />
+                        <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
                         <input className="Busca_dor" type="text" placeholder="Buscar" required />
                         <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
                     </div>
@@ -63,61 +124,51 @@ const Gestion = () => {
                 </div>
                 <div className="tablaUsuarios">
                     <table className="tabla--Usuarios">
-                        <tr>
-                            <th >Nombre </th>
-                            <th >Rol</th>
-                            <th >Correo</th>
-                            <th >Estado</th>
-                        </tr>
-
-                        <tr>
-                            <td>Juan Fernando</td>
-                            <td >Administrador</td>
-                            <td >Juanfed12345@gmail.com</td>
-                            <td>Autorizado</td>
-                        </tr>
-
-                        <tr>
-                            <td>Cristian Camilo</td>
-                            <td>Vendedor</td>
-                            <td>CristianCami@outlook.com</td>
-                            <td>Pendiente</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th >Nombre </th>
+                                <th >Rol</th>
+                                <th >Correo</th>
+                                <th >Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {listaPersonas.map((usuario) => {
+                                return (
+                                    <tr key={nanoid()}>
+                                        <td>{usuario.nombre}</td>
+                                        <td>{usuario.rol}</td>
+                                        <td>{usuario.correo}</td>
+                                        <td>{usuario.estado}</td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
                     </table>
                 </div>
-
             </div>
-
         )
-
-
     }
-
-    const [mostrarTabla, setMostrarTabla] = useState(true);
-    const [titulo, setTitulo] = useState("Agregar usuario");
-
-    useEffect(() => {
-        if (mostrarTabla) {
-            setTitulo("Agregar usuario");
-        } else {
-            setTitulo("Ver lista de usuarios");
-        }
-    }, [mostrarTabla]);
-
     return (
         <div id="contenido-gestion">
             <center>
                 <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
                 <br />
                 <div>
-                    {mostrarTabla ? (<VerTabla />) : (<GestionUsuarios />)}
+                    {mostrarTabla ? (<ListaUsuarios listaPersonas={gestion} />) : (<AgregarUsuario
+                        crearDato={setGestion} listaUsuarios={gestion} />)}
                 </div>
             </center>
 
 
         </div>
     )
+
 }
+
+
+
+
 
 export default Gestion;
 

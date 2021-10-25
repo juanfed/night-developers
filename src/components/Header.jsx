@@ -29,39 +29,39 @@ function Header(){
                     <nav className="nav">
 
                     <div>
-                        <a href="#" className="nav__logo">
+                        <div href="#" className="nav__logo">
                         <i className='bx bx-layer'></i>
                         <Link to="/admin"><span className="nav__logo-name">Inicio</span></Link>
-                        </a>
+                        </div>
 
                         <div className="nav__list">
-                        <a href="#" className="nav__link active">
+                        <div href="#" className="nav__link active">
                             <i className='bx bxs-user nav__icon'></i>
                             <span className="nav__name">Usuario</span>
-                        </a>
+                        </div>
 
-                        <a href="#" className="nav__link">
+                        <div href="#" className="nav__link">
                             <i className='bx bxs-cart-alt nav__icon'></i>
                             <Link to="/admin/producto"><span className="nav__name">Productos</span></Link>
-                        </a>
+                        </div>
 
-                        <a href="#" className="nav__link">
+                        <div href="#" className="nav__link">
                             <i className='bx bxs-bar-chart-alt-2 nav__icon'></i>
                             <Link to="/admin/ventas"><span className="nav__name">Ventas</span></Link>
-                        </a>
+                        </div>
 
-                        <a href="#" className="nav__link">
+                        <div href="#" className="nav__link">
                             <i className='bx bxs-group bx-flip-horizontal bx-tada' id="icono__gestion"></i>
                             <Link to="/admin/gestionUser"><span className="nav__name">Gestion Usuarios</span></Link>
-                        </a>
+                        </div>
 
                     </div>
 
                     </div>
-                        <a href="#" className="nav__link">
+                        <div href="#" className="nav__link">
                             <i className='bx bx-log-out nav__icon'></i>
                             <Link to="/login"><span className="nav__name">Salir</span></Link>
-                        </a>
+                        </div>
                     </nav>
                 </div>
             </div>
