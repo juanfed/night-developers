@@ -3,57 +3,64 @@ table, th, td {
     margin: 25px; 
     border:2px solid black (5, 236, 213);
     border-collapse: collapse;
-    color:black;background-color:#686D76;
+    background-color:#686D76;
     text-align: center;
-    }
-    body{
-        overflow-y: hidden; /*Modificar para el siguiente sprint*/
-    }
-    #contenido__producto{
-        height:100vh;
-        background-color:#ededed;
-        overflow: hidden;
-    }
-    
-    th, td {padding: 20px; 
+}
+
+table th{
+    color: white;
+    font-weight: 800;
+}
+
+body{
+    overflow-y: hidden; /*Modificar para el siguiente sprint*/
+}
+
+#contenido__producto{
+    height:100vh;
+    background-color:#ededed;
+    overflow: hidden;
+}
+
+th, td {padding: 20px; 
     width: 220px;
     color:black;
-    
-    }
-    td{
-        background-color:white;
 
-    }
-    
-    input.caja{
+}
+
+td{
+    background-color:white;
+}
+
+/*Estilos de los registro de los datos*/
+input.caja{
     text-align: center;
     border-radius: 5px;
     width:250px;
     height: 35px;
     margin-left: 15px;
     
-     }
-    
-     input.datos{
-     text-align: center;
-     border-radius: 5px;
-     width:250px;
-     height: 30px;
-     margin-bottom: 12px;
-     
-     
-     }
-    
-     select.caja{
-     text-align: center;
-     border-radius: 5px;
-     width: 252px;
-     height: 34px;
-     margin-bottom: 12px;
-     border:solid 2px;
-     display:inline-block;
-     
-     }
+}
+
+input.datos{
+    text-align: center;
+    border-radius: 5px;
+    width:330px;
+    height: 38px;
+    margin-bottom: 12px;
+    font-size: 1.7rem;
+}
+
+select.caja{
+    text-align: center;
+    border-radius: 5px;
+    width: 252px;
+    height: 34px;
+    margin-bottom: 12px;
+    border:solid 2px;
+    display:inline-block;
+}
+
 #div{
     display:inline-block;
 }
@@ -69,46 +76,46 @@ table, th, td {
 }
 
 .ventas-boton-agregar:hover {
-  background-color: white; 
-  
+    background-color: white; 
+
 }
 .Titulo-producto{
     font-size: 35px;
 }
 
 .buscador_actu{
-display:inline-block;
-margin-left: 20px;
+    display:inline-block;
+    margin-left: 20px;
 }
 
 .Actuali_zar{
-cursor: pointer;
-border-radius: 5px;
-text-align: center;
-width: 100px;
-height: 35px;
-margin:20px;
-background-color:gray;
-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    margin:20px;
+    background-color:gray;
+    color: white;
 }
 
 .Actuali_zar:hover{
-transform: scale(1.1);
-color:black;
-background-color: white;
+    transform: scale(1.1);
+    color:black;
+    background-color: white;
 
 }
 
 .buscar-botonp{
-text-align: center;
-width: 100px;
-height: 35px;
-margin:20px;
-cursor: pointer;
-border-radius: 5px;
-background-color: #48cae8;
-font:bold;
-color:white;
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    margin:20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #48cae8;
+    font:bold;
+    color:white;
 
 }
 
@@ -120,12 +127,38 @@ background-color: white;
 }
 
 .Busca_dor{
-border-radius: 5px;
-width: 250px;
-height: 30px;
-margin:20px;
-
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    margin:20px;
 }
 
+/*Esto de abajo sirve para que cuando pase el cursor en la tabla
+esta cabie de color a medida que apundo en las finlas con el cursos*/
 
-    
+table tr:nth-child(even){
+    background-color: #ffff;
+}   
+
+table tr:hover td{
+    background-color: #686D76;
+    color: white;
+}
+
+/*Aca abajo le dare estulos al boton que me renderiza la lista y formulario*/
+
+.productoTitulo{
+    background-color: #686D76;
+    padding: 0.6rem;
+    color: white;
+    box-shadow: 2px 2px 10px 2px #686D76;
+}
+
+.productoTitulo:hover{
+    background-color: #ffff;
+    padding: 0.6rem;
+    color: black;
+    box-shadow: 2px 2px 10px 2px #2f394b;
+}
+
+/*Aca modificare u*/
