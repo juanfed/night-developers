@@ -74,3 +74,11 @@ color: black;
 .titles_for{
     margin-bottom: 5px;
 }
+
+.Select_form{
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+
+}

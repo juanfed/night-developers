@@ -1,5 +1,6 @@
 import 'styles/ventas.css';
 import React, { useState, useEffect, useRef } from 'react';
+import { nanoid } from "nanoid";
 
 const lista_Ventas = [
   {
@@ -9,7 +10,15 @@ const lista_Ventas = [
     comprador: "Juan",
     estado: "en proceso"
   },
-  
+  {
+    id: "2",
+    precio: "560.000",
+    cantidad: "3",
+    comprador: "Jose",
+    estado: "en proceso"
+  },
+
+
 
 ]
 
@@ -58,7 +67,7 @@ const Ventas = () => {
         <br />
         <input className="datos" type="text" name='cantidad' placeholder="Ingrese La Cantidad" required />
         <br />
-        <input className="datos" type="text" name='comprador'  placeholder="Ingrese el Comprador" required />
+        <input className="datos" type="text" name='comprador' placeholder="Ingrese el Comprador" required />
         <br />
         <select className="multi" name='estado' required>
 
@@ -69,8 +78,8 @@ const Ventas = () => {
 
         </select>
 
-        <br/>
-        <br/>
+        <br />
+        <br />
 
 
 
@@ -81,22 +90,41 @@ const Ventas = () => {
   }
 
   const ListaVentas = ({ lista_ventas }) => {
+    //buqueda
+    const [busqueda, setBusqueda] = useState('');
+    const [ventasFiltradas, setVentasFiltradas] = useState(lista_ventas)
+    useEffect(() => {
+      setVentasFiltradas(
+        lista_ventas.filter((elemento) => {
+          return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+        }));
+    }, [busqueda, lista_ventas])
+
+
     useEffect(() => {
       console.log("se supone que deberia de mostrarse en consola", lista_ventas);
     }, [lista_ventas])
     return (
-        
+
       <div>
         <div className="buscador_actu">
-        <div>
-          <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
-          <input className="Busca_dor" type="text" placeholder="Buscar" required />
-          <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+          <div>
+            <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
+            <select className="Select_form" name="filter">
+            <option>Seleccione</option>
+              <option >ID</option>
+              <option >Precio</option>
+              <option>Cantidad</option>
+              <option>Comprador</option>
+              <option>Estado</option>
+            </select>
+            <input className="Busca_dor" type="text" placeholder="Buscar" required value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
+            
+          </div>
+
+
         </div>
 
-        
-        </div>
-        
         <table>
           <tr>
             <th >ID</th>
@@ -104,16 +132,24 @@ const Ventas = () => {
             <th >Cantidad</th>
             <th >Comprador</th>
             <th >Estado</th>
+            <th >Cambios</th>
           </tr>
           <tbody>
-            {lista_ventas.map((Venta) => {
+            {ventasFiltradas.map((Venta) => {
               return (
-                <tr>
+                <tr key={nanoid()}>
                   <td>{Venta.id}</td>
                   <td>{Venta.precio}</td>
                   <td>{Venta.cantidad}</td>
                   <td>{Venta.comprador}</td>
                   <td>{Venta.estado}</td>
+                  <td>
+                    <div className="botonListaProducto">
+                      <button>Editar</button>
+                      <button>Eliminar</button>
+                    </div>
+
+                  </td>
                 </tr>
               );
             })}

@@ -1,11 +1,16 @@
 import 'styles/gestion.css';
-
 import React, { useState, useEffect, useRef } from 'react';
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
 const listaUsuarios = [
     {
         nombre: "Juan Camilo",
+        rol: "Administrador",
+        correo: "Juan@gmail.com",
+        estado: "Pendiente"
+    },
+    {
+        nombre: "Andres",
         rol: "Administrador",
         correo: "Juan@gmail.com",
         estado: "Pendiente"
@@ -107,6 +112,18 @@ const Gestion = () => {
     }
 
     const ListaUsuarios = ({ listaPersonas }) => {
+
+        //Sesion de busqueda
+        const [busqueda, setBusqueda] = useState('');
+        const [usuariosFiltrados, setUsuariosFiltrados] = useState(listaPersonas)
+        useEffect(() => {
+            setUsuariosFiltrados(
+                listaPersonas.filter((elemento) => {
+                    return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+                }));
+        }, [busqueda, listaPersonas])
+
+
         useEffect(() => {
             console.log("aca me muestra algo", listaPersonas);
         }, [listaPersonas])
@@ -116,8 +133,15 @@ const Gestion = () => {
                 <div className="buscador_actu">
                     <div>
                         <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
-                        <input className="Busca_dor" type="text" placeholder="Buscar" required />
-                        <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+                        <select className="Select_form" name="filter">
+                            <option >Seleccione</option>
+                            <option >Nombre</option>
+                            <option >Rol</option>
+                            <option>Correo</option>
+                            <option>Estado</option>
+                        </select>
+                        <input className="Busca_dor" type="text" placeholder="Buscar" required value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
+
                     </div>
 
 
@@ -130,16 +154,23 @@ const Gestion = () => {
                                 <th >Rol</th>
                                 <th >Correo</th>
                                 <th >Estado</th>
+                                <th >Cambios</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {listaPersonas.map((usuario) => {
+                            {usuariosFiltrados.map((usuario) => {
                                 return (
                                     <tr key={nanoid()}>
                                         <td>{usuario.nombre}</td>
                                         <td>{usuario.rol}</td>
                                         <td>{usuario.correo}</td>
                                         <td>{usuario.estado}</td>
+                                        <td>
+                                            <div className="botonListaProducto">
+                                                <button>Editar</button>
+                                                <button>Eliminar</button>
+                                            </div>
+                                        </td>
                                     </tr>
                                 );
                             })}

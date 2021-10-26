@@ -118,27 +118,35 @@ const Producto = () => {
     //buqueda
     const [busqueda, setBusqueda] = useState('');
     const [celularesFiltrados, setCelularesFiltrados] = useState(listaCelulares)
-    useEffect (() =>{
+    useEffect(() => {
       setCelularesFiltrados(
-      listaCelulares.filter((elemento) =>{
-        return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
-      }));
+        listaCelulares.filter((elemento) => {
+          return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase());
+        }));
     }, [busqueda, listaCelulares])
 
     useEffect(() => {
       console.log(
-        "se supone que deberia de mostrarse en consola", 
+        "se supone que deberia de mostrarse en consola",
         listaCelulares
-      ); 
+      );
     }, [listaCelulares]);
     return (
       <div>
         <div className="buscador_actu">
           <div>
-            <input className="Actuali_zar" type="text" value="Actualizar" />
-            <input className="Busca_dor" type="text" placeholder="Buscar" value={busqueda} 
-            onChange={(e) => setBusqueda(e.target.value)}/>
-            <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+            <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
+            <select className="Select_form" name="filter">
+              <option >Seleccione</option>
+              <option >ID</option>
+              <option>Producto</option>
+              <option>Descripcion</option>
+              <option >Valor</option>
+              <option >Estado</option>
+            </select>
+            <input className="Busca_dor" type="text" placeholder="Buscar" value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)} />
+
           </div>
         </div>
         <table>
