@@ -15,7 +15,7 @@ import Login from "pages/login";
 import Registro from "components/registro";
 import LayoutPublico from "layouts/LayoutPublico";
 import HeaderPublico from "components/HeaderPublico";
-
+import Inicio from "pages/inicio";
 
 
 
@@ -42,7 +42,7 @@ function App() {
             </Switch>
           </LayoutPrivado>
         </Route>
-        <Route path={['/login', '/registro']}>
+        <Route path={['/login', '/registro', '/inicio']}>
           <LayoutRegistro>
             <Switch>
               <Route path="/login">
@@ -50,6 +50,9 @@ function App() {
               </Route>
               <Route path="/registro">
                 <Registro />
+              </Route>
+              <Route  path="/inicio">
+                 <Inicio/>
               </Route>
             </Switch>
           </LayoutRegistro>

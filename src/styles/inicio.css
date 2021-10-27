@@ -1,0 +1,157 @@
+body{
+    margin: 0px;
+}
+
+ul{
+    list-style: none;
+    
+}
+
+.header_inicio{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0px;
+    padding: 10px;
+    background-color:#369bd6 ;
+    border-bottom: 1px solid blue;
+    margin: 0.1rem 0.0rem 0.1rem 0.0rem;
+}
+
+.header_inicio > li{
+    display: flex;
+    align-items: center;
+}
+
+.logo_inicio{
+    height: 70px;
+}
+
+.inicio_login{
+    background-color:white;
+    color: #369bd6;
+    padding: 10px 40px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-left: 300px;
+
+    
+}
+
+.inicio_login:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.buscar_inicio{
+    background-color: white;
+    border: 1px solid gray;
+    padding: 6px;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0px 16px 0px 700px;
+    
+}
+.buscar_inicio > input{
+    border: 0px;
+    outline: none;
+}
+
+.buscar_inicio:focus-within{
+    border: 1px solid rgb(78, 228, 59);
+
+}
+
+.inicio_registro{
+    background-color: white;
+    color: #369bd6;
+    padding: 10px 30px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+
+}
+
+.inicio_registro:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.banner_inicio{
+    padding: 30px;
+    
+}
+
+.contenedortodo{
+    display: flex;
+}
+
+.separadorfot{
+    margin: 5px;
+}
+
+.contedor_imagen{
+    width: 240px;
+    height: 350px;
+    display: flex;
+}
+
+.contedor_imagen >img{
+    object-fit:contain;
+    width: 100%;
+    
+
+}
+
+.contedor_imagen:hover{
+    transform: scale(1.1);
+
+}
+
+.nombrecelular{
+    text-align: center;
+}
+
+.nomb_titulo{
+    text-align: center;
+    color: #369bd6;
+}
+
+.footer1 {
+    display: flex;
+  height:50px;
+  justify-content: space-between;
+  background-color:#369bd6;
+  color:white;
+  text-align:center;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  
+}
+
+.footer1 > li{
+    display: flex;
+    align-items: center;
+
+}
+
+#LayoutDiv3 {
+  width: 1526px;
+  height: 510px;
+  overflow-y:scroll;
+}
+
+.bannerinicio{
+    padding: 10px;
+    width: 1520px;
+    align-items: center;
+    
+}
+
+
+
