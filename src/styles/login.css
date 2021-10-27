@@ -1,5 +1,5 @@
 /* Estilos del login */
-/* Estilos del login */
+
 
 *{
     text-decoration: none;
@@ -115,7 +115,7 @@
     background: #5aa6f1;
     font-weight: 600;
     cursor: pointer;
-    color: white;
+    color: rgb(61, 55, 55);
     outline: none;
     margin: 20px 20px 0px 15px;
 }

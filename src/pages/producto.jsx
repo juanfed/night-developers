@@ -188,6 +188,9 @@ const Producto = () => {
     /** return del render de la lista de los productos */
     <div>
       <div id="contenido__producto">
+
+        <form onsubmit="myFunction(); return false;" required />
+
         <center>
           <button
             className="productoTitulo"
@@ -205,7 +208,49 @@ const Producto = () => {
               />
             )}
           </div>
+
+          <div className="buscadorp">
+            <input type="text" placeholder="Buscar" required />
+            <button type="button" name="name" id="buttom" className="buscar-botonp">Buscar</button>
+          </div>
+
+
+
+
+          <table id="miTabla">
+            <tr>
+              <th >ID</th>
+              <th >Producto</th>
+              <th >Descripción</th>
+              <th >Valor Unitario</th>
+              <th >Estado</th>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td >Redmi note 8</td>
+              <td >64 GB memoria, 8GB Ram</td>
+              <td >650.000</td>
+              <td >Disponible</td>
+            </tr>
+
+            <tr>
+              <td>02</td>
+              <td >Redmi note 9</td>
+              <td >120 GB memoria, 8GB Ram</td>
+              <td >850.000</td>
+              <td >Disponible</td>
+            </tr>
+
+
+
+
+
+          </table>
         </center>
+
+
+
+
       </div>
     </div>
   );

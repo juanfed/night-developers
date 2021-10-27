@@ -5,13 +5,14 @@ import {
   Route,
 } from "react-router-dom";
 
+
 import LayoutPrivado from "layouts/LayoutPrivado";
 import LayoutRegistro from "layouts/LayoutRegistro";
 import Producto from "pages/producto";
-import Ventas from "pages/ventas";
+import Login from 'pages/login';
+import Ventas from 'pages/ventas';
 import Gestion from "pages/gestion";
 import Admin from "pages/Admin";
-import Login from "pages/login";
 import Registro from "components/registro";
 import LayoutPublico from "layouts/LayoutPublico";
 import HeaderPublico from "components/HeaderPublico";
@@ -24,9 +25,12 @@ function App() {
   return ( /*Aca se incluiran todas las paginas de nuestro sitio web */
     <Router>
       <Switch>
-        <Route path={['/admin', '/admin/producto', '/admin/ventas', '/admin/gestionUsuarios']}>
+        <Route path={['/admin', '/admin/producto', '/admin/ventas', '/admin/gestionUsuarios', '/admin/usuario']}>
           <LayoutPrivado>
             <Switch>
+              <Route path="/admin/usuario">
+                <Usuario/>
+              </Route>
               <Route path="/admin/producto">
                 <Producto />
               </Route>

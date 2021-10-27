@@ -4,32 +4,26 @@
     box-sizing: border-box;
 }
 
-/*Aca ira todo lo relacionado con los eltilos del formulario*/
-.registroCaja{
-    background-image: url("imagenes/fondoRegistro2.jpg");
-    height: 100vh;
-}
 
-.formularioTitulo{
+.formu_titulo{
     text-align: center;
     font-size: 1.85rem;
     padding-top: 3rem;
     padding-bottom: 2rem;
+    
+}
+
+.formu_edit{
+    margin: auto;
+    flex-direction: column;
+    height: 74vh;
+    width: 60vh;
+    border-radius: 15px;
+    background-color: #369bd6;
     color: white;
 }
 
-.formularioRegistro{
-    margin: auto;
-    flex-direction: column;
-    height: 69vh;
-    width: 60vh;
-    border-radius: 30px;
-    background-color: #369bd6;
-
-}
-
-
-.formularioRegistro label{
+.formu_edit label{
     display: block;
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
@@ -37,20 +31,29 @@
     color: white;
 }
 
-.formularioRegistro-caja{
+.formu_titulo{
+    color: #369bd6;
+    margin-top: -48px;
+
+    
+}
+
+.formu_edit_caja{
     text-align: center;
 }
 
-.formularioRegistro-caja input{
-    background-color:#ededed;
+.formu_edit_usuario{
+    text-align: center;
+}
+
+.formu_edit_caja input{
+    background-color:white;
     width:80%;
     font-size: 1.25rem;
     border-radius: 10px;
     border: 0;
     text-align: center;
-    
 }
-
 
 .formularioRegistro select{
     flex-direction: column;
@@ -58,7 +61,12 @@
     display: block;
 }
 
-.botonRegistrar{
+.formu_edit_usuario2{
+    text-align: center;
+    padding-top: 0.8rem;
+}
+
+.boton_modif{
     padding: 8px 35px;
     margin-top: 5px;
     margin-left: 88px;
@@ -66,12 +74,11 @@
     color: #369bd6;
     font-weight: 600;
     border: none;
-    margin: 15px 40px 0px 75px;
+    margin: 15px 40px 0px 82px;
     border-radius: 5px;
-
 }
 
-.botonRegistrar2{
+.boton_modif2{
     padding: 8px 30px;
     background: white;
     color: #369bd6;
@@ -79,32 +86,4 @@
     border: none;
     border-radius: 5px;
 
-}
-
-.formularioRegistro-caja2{
-    text-align: center;
-    padding-top: 0.8rem;
-    color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Esto de aca abajo no uqiere fucionar*/
-.formularioRegistro{
-    display: flex;
-    margin: auto;
 }

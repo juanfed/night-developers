@@ -36,20 +36,21 @@ const registro = () => {
                         <input type="password" id="contrseñaRegistro2" placeholder="Contraseña" required />
                     </div>
 
-                    <div className="formularioRegistro-caja">
-                        <label for="botonRegistro">Rol</label> <br />
+                    <div className="formularioRegistro-caja2">
+                        <p>Rol</p>
+                        <select id="selecione_nombre" class="caja">
+                            <option value="">Administrador</option>
+                            <option value="Juan fernando">Usuario</option>
+                            <option value="Diego Hernandez">Vendedor</option>
+                        </select>
                     </div>
 
 
-                    <select>
-                        <option value="Administrador">Administrador</option>
-                        <option>Vendedor</option>
-                        <option>Usuario</option>
-                    </select>
 
-                    <div className="botonRegistrar">
-                        <span>Enviar</span>
-                        <Link to="/login"><span>Cancelar</span></Link>
+
+                    <div>
+                    <button type="button"className="botonRegistrar" >Enviar</button>
+                    <Link to="/login"><button type="button"className="botonRegistrar2" >Cancelar</button></Link>
 
                     </div>
 
