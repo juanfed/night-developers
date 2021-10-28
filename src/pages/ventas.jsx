@@ -17,10 +17,8 @@ const lista_Ventas = [
     comprador: "Jose",
     estado: "en proceso"
   },
-
-
-
 ]
+
 
 const Ventas = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -36,28 +34,60 @@ const Ventas = () => {
 
   }, [mostrarTabla]);
 
-  useEffect(() => {
-    // aca obtendré la lista de los prouctos desde el backend
-    setVentas(lista_Ventas);
-  }, [lista_Ventas]);
 
-  const AgregarVenta = ({
-    crearDato,
-    listaVentas
-  }) => {
+  useEffect(() => { //modifique esto pero no se si fue la mejor opcion 
+    // aca obtendré la lista de los prouctos desde el backend
+
+    const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+      setVentas(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    setVentas([]);
+  }, []);
+
+  const AgregarVenta = ({ crearDato, listaVentas }) => {
 
     const form = useRef(null);
 
     const submitFrom = (e) => {
       e.preventDefault(); // me mostrará una advertencia para llenar los campos
       const fd = new FormData(form.current);
-      const nuevoVenta = {};
 
+
+      const nuevoVenta = {};
       fd.forEach((value, key) => {
         nuevoVenta[key] = value;
       });
-      setVentas([...listaVentas, nuevoVenta]);
-    }
+
+      const options = {
+        method: 'POST',
+        url: 'http://localhost:5000/ventas/nuevo',
+        headers: { 'Content-Type': 'application/json' },
+        data: {
+          id: nuevoVenta.id,
+          nombre: nuevoVenta.precio,
+          descripcion: nuevoVenta.cantidad,
+          valor: nuevoVenta.comprador,
+          estado: nuevoVenta.estado
+        }
+      };
+
+      await axios.request(options).then(function (response) {
+        console.log(response.data);
+        alert("producto creado con exito"); // lo puse como un mensaje emergente :v
+      }).catch(function (error) {
+        console.error(error);
+        alert("Error al crear un producto nuevo");
+      });
+
+      //setMostrarTabla(true); // si no funiona quitar
+
+    };
+
 
     return (
       <form action="" ref={form} onSubmit={submitFrom}>
@@ -111,7 +141,7 @@ const Ventas = () => {
           <div>
             <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
             <select className="Select_form" name="filter">
-            <option>Seleccione</option>
+              <option>Seleccione</option>
               <option >ID</option>
               <option >Precio</option>
               <option>Cantidad</option>
@@ -119,7 +149,7 @@ const Ventas = () => {
               <option>Estado</option>
             </select>
             <input className="Busca_dor" type="text" placeholder="Buscar" required value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
-            
+
           </div>
 
 
