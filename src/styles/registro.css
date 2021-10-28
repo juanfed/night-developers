@@ -20,9 +20,9 @@
 .formularioRegistro{
     margin: auto;
     flex-direction: column;
-    height: 68vh;
-    width: 40vh;
-    border-radius: 30px;
+    height: 75vh;
+    width: 50vh;
+    border-radius: 10px;
     background-color: #1c6fad;
 }
 
@@ -31,19 +31,21 @@
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
     font-size: 1.2rem;
-    color: white;
+    color: black;
 }
 
 .formularioRegistro-caja{
     text-align: center;
+    
 }
 
 .formularioRegistro-caja input{
     background-color:#ededed;
-    width:80%;
+    width:250px;
+    height: 30px;
     font-size: 1.25rem;
-    border-radius:12px 5px 12px 5px;
-    border: 0;
+    border-radius:5px;
+    border-color: black;
 }
 
 
@@ -51,22 +53,37 @@
     flex-direction: column;
     margin: auto;
     display: block;
-}
-
-.botonRegistrar{
+    width: 150px;
+    height: 25px;
     text-align: center;
-    margin: auto;
-    padding-top: 1rem;
+    border-radius: 5px;
+    padding: 0px;
 }
 
-.botonRegistrar span{
-    margin: 0rem 1rem 0rem 1rem;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border-radius: 20px;
-    background-color: #ededed;
-    color: rgb(0, 25, 136);
+
+
+.botonRegistrar {
+    
+    height: 30px;
+    width: 120px;
+    margin-left: 35px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+    align-items: center;
+    
+
 }
+
+.botonRegistrar:hover{
+    background-color: gray;
+
+
+}
+
 
 
 
