@@ -1,26 +1,8 @@
 import 'styles/ventas.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { nanoid } from "nanoid";
+import axios from 'axios';
 
-const lista_Ventas = [
-  {
-    id: "58959",
-    precio: "560.000",
-    cantidad: "3",
-    comprador: "Juan",
-    estado: "en proceso"
-  },
-  {
-    id: "2",
-    precio: "560.000",
-    cantidad: "3",
-    comprador: "Jose",
-    estado: "en proceso"
-  },
-
-
-
-]
 
 const Ventas = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -38,8 +20,15 @@ const Ventas = () => {
 
   useEffect(() => {
     // aca obtendré la lista de los prouctos desde el backend
-    setVentas(lista_Ventas);
-  }, [lista_Ventas]);
+    const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    setVentas([]);
+  }, []);
 
   const AgregarVenta = ({
     crearDato,
@@ -111,7 +100,7 @@ const Ventas = () => {
           <div>
             <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
             <select className="Select_form" name="filter">
-            <option>Seleccione</option>
+              <option>Seleccione</option>
               <option >ID</option>
               <option >Precio</option>
               <option>Cantidad</option>
@@ -119,7 +108,7 @@ const Ventas = () => {
               <option>Estado</option>
             </select>
             <input className="Busca_dor" type="text" placeholder="Buscar" required value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
-            
+
           </div>
 
 

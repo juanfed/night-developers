@@ -13,6 +13,14 @@ const Producto = () => {
   useEffect(() => {
     if (mostrarTabla) {
       setTitulo("Agregar Producto");
+      const options = { method: 'GET', url: 'http://localhost:5000/producto' };
+
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+        setProductos(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
     } else {
       setTitulo("Ver Lista Producto");
     }
@@ -50,7 +58,6 @@ const Producto = () => {
         url: 'http://localhost:5000/producto/nuevo',
         headers: { 'Content-Type': 'application/json' },
         data: {
-          id: nuevoProducto.id,
           nombre: nuevoProducto.nombre,
           descripcion: nuevoProducto.descripcion,
           valor: nuevoProducto.valor,
@@ -72,39 +79,11 @@ const Producto = () => {
 
     return (
       <form action="" ref={form} onSubmit={submitFrom} className="formProducto">
-        <input
-          className="datos"
-          type="text"
-          name="id"
-          placeholder="Ingrese el ID"
-          required
-        />
+        <input className="datos" type="text" name="nombre" placeholder="Ingrese el nombre" required/>
         <br />
-        <input
-          className="datos"
-          type="text"
-          name="nombre"
-          placeholder="Ingrese el nombre"
-          required
-        />
+        <input className="datos" type="text" name="descripcion" placeholder="Ingrese La Descripción" required/>
         <br />
-        <input
-          className="datos"
-          type="text"
-          name="descripcion"
-          placeholder="Ingrese La Descripción"
-          required
-        />
-        <br />
-        <input
-          className="datos"
-          type="text"
-          name="valor"
-          min={0}
-          max={6}
-          placeholder="Ingrese el Valor Unitario"
-          required
-        />
+        <input className="datos" type="text" name="valor" min={0} max={6} placeholder="Ingrese el Valor Unitario" required/>
         <br />
         <select className="multi" name="estado" required>
           <option>Seleccione</option>
@@ -124,6 +103,21 @@ const Producto = () => {
       </form>
     );
   };
+
+  const EliminarProducto = async (productoId) =>{
+    const options = {
+      method: 'DELETE',
+      url: 'http://localhost:5000/producto/delete',
+      headers: {'Content-Type': 'application/json'},
+      data: {id: productoId}
+    };
+    
+    await axios.request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+  }
 
   const ListaProductos = ({ listaCelulares }) => {
     //buqueda
@@ -175,7 +169,7 @@ const Producto = () => {
             {celularesFiltrados.map((producto) => {
               return (
                 <tr key={nanoid()}>
-                  <td>{producto.id}</td>
+                  <td>{producto._id.slice(18)}</td>
                   <td>{producto.nombre}</td>
                   <td>{producto.descripcion}</td>
                   <td>{producto.valor}</td>
@@ -183,7 +177,7 @@ const Producto = () => {
                   <td>
                     <div className="botonListaProducto">
                       <button>Editar</button>
-                      <button>Eliminar</button>
+                      <button onClick={() => EliminarProducto(producto._id)}>Eliminar</button>
                     </div>
                   </td>
                 </tr>
