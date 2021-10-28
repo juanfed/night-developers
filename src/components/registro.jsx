@@ -6,7 +6,8 @@ const registro = () => {
     return (
         <div className="registroCaja">
             <div className="formularioTitulo">
-                <h2>Celu - Componentes</h2>
+                <h2>Registro De Datos</h2>
+
             </div>
 
             <div className="formularioRegistro">
@@ -37,7 +38,7 @@ const registro = () => {
                     </div>
 
                     <div className="formularioRegistro-caja">
-                        <label for="botonRegistro">Rol</label> <br />
+                        <label for="botonRegistro">Rol</label>
                     </div>
 
 
@@ -47,9 +48,9 @@ const registro = () => {
                         <option>Usuario</option>
                     </select>
 
-                    <div className="botonRegistrar">
-                        <span>Enviar</span>
-                        <Link to="/login"><span>Cancelar</span></Link>
+                    <div >
+                        <Link to="/login"><button className="botonRegistrar">Enviar</button></Link>
+                        <Link to="/login"><button className="botonRegistrar">Cancelar</button></Link>
 
                     </div>
 

@@ -7,7 +7,8 @@ const Login = () => {
 
         <div  >
             <div className="contenedor-imagen">
-           <a href="/HeaderPublico"> <img className="Imagen_log" src="/Media/Home.png" alt="" /></a>
+            <Link to="/"><img className="Imagen_log" src="/Media/Home.png" alt="" /></Link>
+           
             </div>
             
             <div className="login_body">
