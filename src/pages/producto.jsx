@@ -1,30 +1,9 @@
 import "styles/producto.css";
 import React, { useState, useEffect, useRef } from "react";
 import { nanoid } from "nanoid";
+import axios from 'axios';
 
-const listaProductos = [
-  {
-    id: "54687",
-    nombre: "Xiaomi note 9S",
-    descripcion: "Telefono celular",
-    valor: "1.250.000",
-    estado: "disponible",
-  },
-  {
-    id: "58959",
-    nombre: "Google Pixel 6",
-    descripcion: "Telefono celular",
-    valor: "5.480.000",
-    estado: "no disponible",
-  },
-  {
-    id: "54456",
-    nombre: "One Plus 6T",
-    descripcion: "Telefono celular",
-    valor: "3.544.999",
-    estado: "disponible",
-  },
-];
+
 
 const Producto = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -39,24 +18,56 @@ const Producto = () => {
     }
   }, [mostrarTabla]);
 
-  useEffect(() => {
+  useEffect(() => { // modifique esto pero no se si fue la mejor opcion 
     // aca obtendré la lista de los prouctos desde el backend
-    setProductos(listaProductos);
-  }, [listaProductos]);
+
+    const options = { method: 'GET', url: 'http://localhost:5000/producto' };
+
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+      setProductos(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    setProductos([]);
+  }, []);
 
   const AgregarProducto = ({ crearDato, listaProductos }) => {
     const form = useRef(null);
 
-    const submitFrom = (e) => {
+    const submitFrom = async (e) => {
       e.preventDefault(); // me mostrará una advertencia para llenar los campos
       const fd = new FormData(form.current);
-      const nuevoProducto = {};
 
+
+      const nuevoProducto = {};
       fd.forEach((value, key) => {
         nuevoProducto[key] = value;
       });
 
-      setProductos([...listaProductos, nuevoProducto]);
+      const options = {
+        method: 'POST',
+        url: 'http://localhost:5000/producto/nuevo',
+        headers: { 'Content-Type': 'application/json' },
+        data: {
+          id: nuevoProducto.id,
+          nombre: nuevoProducto.nombre,
+          descripcion: nuevoProducto.descripcion,
+          valor: nuevoProducto.valor,
+          estado: nuevoProducto.estado
+        }
+      };
+
+      await axios.request(options).then(function (response) {
+        console.log(response.data);
+        alert("producto creado con exito"); // lo puse como un mensaje emergente :v
+      }).catch(function (error) {
+        console.error(error);
+        alert("Error al crear un producto nuevo");
+      });
+
+      //setMostrarTabla(true); // si no funiona quitar
+
     };
 
     return (
