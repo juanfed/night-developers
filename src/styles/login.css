@@ -142,3 +142,13 @@
     
     
 }
+.Imagen_log{
+    margin: 40px 10px 10px 10px;
+    height:65px ;
+    width: 80px;
+    cursor: pointer;
+    display: flex;
+    padding: none;
+    
+}
+

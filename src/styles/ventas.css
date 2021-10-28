@@ -12,9 +12,7 @@ table th{
     font-weight: 800;
 }
 
-body{
-    overflow-y: hidden; /*Modificar para el siguiente sprint*/
-}
+
 
 #contenido__producto{
     height:100vh;
@@ -141,8 +139,8 @@ table tr:nth-child(even){
 }   
 
 table tr:hover td{
-    background-color: #686D76;
-    color: white;
+    background-color: rgb(172, 245, 250);
+    color:black;
 }
 
 /*Aca abajo le dare estulos al boton que me renderiza la lista y formulario*/

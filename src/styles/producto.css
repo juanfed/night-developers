@@ -12,9 +12,6 @@ table, th, td {
     text-align: center;
 }
 
-body{
-    overflow-y: hidden; /*Modificar para el siguiente sprint*/
-}
 
 #contenido__producto{
     height:100vh;
@@ -40,6 +37,7 @@ th, td {
     color: white;
     font-size: 1.2rem;
     box-shadow: 2px 2px 8px 1px gray;
+    
 }
 
 .botoness:hover{

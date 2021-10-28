@@ -145,7 +145,7 @@ const Ventas = () => {
                   <td>{Venta.estado}</td>
                   <td>
                     <div className="botonListaProducto">
-                      <button>Editar</button>
+                      <button >Editar</button>
                       <button>Eliminar</button>
                     </div>
 
