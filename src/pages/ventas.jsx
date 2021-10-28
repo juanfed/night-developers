@@ -50,7 +50,6 @@ const Ventas = () => {
   }, []);
 
   const AgregarVenta = ({ crearDato, listaVentas }) => {
-
     const form = useRef(null);
 
     const submitFrom = (e) => {
@@ -78,10 +77,10 @@ const Ventas = () => {
 
       await axios.request(options).then(function (response) {
         console.log(response.data);
-        alert("producto creado con exito"); // lo puse como un mensaje emergente :v
+        alert("venta creada con exito"); // lo puse como un mensaje emergente :v
       }).catch(function (error) {
         console.error(error);
-        alert("Error al crear un producto nuevo");
+        alert("Error al crear una venta nuevo");
       });
 
       //setMostrarTabla(true); // si no funiona quitar
