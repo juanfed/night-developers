@@ -33,31 +33,59 @@ const Gestion = () => {
 
     }, [mostrarTabla]);
 
-    useEffect(() => {
-
-        setGestion(listaUsuarios);
-    }, [listaUsuarios]);
+    useEffect(() => {//modifique esto pero no se si fue la mejor opcion 
+        // aca obtendré la lista de los prouctos desde el backend
 
 
-    const AgregarUsuario = ({
-        crearDato,
-        listaUsuarios
-    }) => {
+        const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
+
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+            setGestion(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+        setGestion([]);
+    }, []);
+
+
+
+    const AgregarUsuario = ({ crearDato, listaUsuarios }) => {
         const form = useRef(null);
 
         const submitFrom = (e) => {
             e.preventDefault();
             const fd = new FormData(form.current);
-            const nuevoUsuario = {};
 
+
+            const nuevoUsuario = {};
             fd.forEach((value, key) => {
                 nuevoUsuario[key] = value;
             });
+            const options = {
+                method: 'POST',
+                url: 'http://localhost:5000/usuarios/nuevo',
+                headers: { 'Content-Type': 'application/json' },
+                data: {
+                  nombre: nuevoUsuario.nombre,
+                  correo: nuevoUsuario.correo,
+                  rol: nuevoUsuario.rol,
+                  estado: nuevoUsuario.estado
+                }
+              };
+        
+              await axios.request(options).then(function (response) {
+                console.log(response.data);
+                alert("usuario creado con exito"); // lo puse como un mensaje emergente :v
+              }).catch(function (error) {
+                console.error(error);
+                alert("Error al crear un producto usuario");
+              });
+        
+              //setMostrarTabla(true); // si no funiona quitar
+        
+            };
 
-            setGestion([...listaUsuarios, nuevoUsuario]);
-
-
-        }
 
 
 
