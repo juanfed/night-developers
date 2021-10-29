@@ -1,6 +1,7 @@
 import 'styles/gestion.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { nanoid } from "nanoid";
+import axios from 'axios';
 
 const listaUsuarios = [
     {
@@ -53,7 +54,7 @@ const Gestion = () => {
     const AgregarUsuario = ({ crearDato, listaUsuarios }) => {
         const form = useRef(null);
 
-        const submitFrom = (e) => {
+        const submitFrom = async (e) => {
             e.preventDefault();
             const fd = new FormData(form.current);
 

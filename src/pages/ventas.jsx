@@ -1,6 +1,7 @@
 import 'styles/ventas.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { nanoid } from "nanoid";
+import axios from 'axios';
 
 const lista_Ventas = [
   {
@@ -52,7 +53,7 @@ const Ventas = () => {
   const AgregarVenta = ({ crearDato, listaVentas }) => {
     const form = useRef(null);
 
-    const submitFrom = (e) => {
+    const submitFrom = async (e) => {
       e.preventDefault(); // me mostrará una advertencia para llenar los campos
       const fd = new FormData(form.current);
 
