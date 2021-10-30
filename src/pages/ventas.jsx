@@ -3,52 +3,30 @@ import React, { useState, useEffect, useRef } from 'react';
 import { nanoid } from "nanoid";
 import axios from 'axios';
 
-const lista_Ventas = [
-  {
-    id: "58959",
-    precio: "560.000",
-    cantidad: "3",
-    comprador: "Juan",
-    estado: "en proceso"
-  },
-  {
-    id: "2",
-    precio: "560.000",
-    cantidad: "3",
-    comprador: "Jose",
-    estado: "en proceso"
-  },
-]
+
 
 
 const Ventas = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
   const [ventas, setVentas] = useState([]);
-  const [titulo, setTitulo] = useState('Agregar Producto');
+  const [titulo, setTitulo] = useState('Agregar Venta');
 
   useEffect(() => {
     if (mostrarTabla) {
       setTitulo('Agregar venta');
+      const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+        setVentas(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
     } else {
       setTitulo('Ver Lista de Ventas');
     }
 
   }, [mostrarTabla]);
-
-
-  useEffect(() => { //modifique esto pero no se si fue la mejor opcion 
-    // aca obtendré la lista de los prouctos desde el backend
-
-    const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
-
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-      setVentas(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
-    setVentas([]);
-  }, []);
 
   const AgregarVenta = ({ crearDato, listaVentas }) => {
     const form = useRef(null);
@@ -68,10 +46,12 @@ const Ventas = () => {
         url: 'http://localhost:5000/ventas/nuevo',
         headers: { 'Content-Type': 'application/json' },
         data: {
-          id: nuevoVenta.id,
-          nombre: nuevoVenta.precio,
-          descripcion: nuevoVenta.cantidad,
-          valor: nuevoVenta.comprador,
+          valorTotal: nuevoVenta.valorTotal,
+          cantidad: nuevoVenta.cantidad,
+          valorUnidad: nuevoVenta.valorUnidad,
+          fechaVenta: nuevoVenta.fechaVenta,
+          idCliente: nuevoVenta.idCliente,
+          nombreCliente: nuevoVenta.nombreCliente,
           estado: nuevoVenta.estado
         }
       };
@@ -81,7 +61,7 @@ const Ventas = () => {
         alert("venta creada con exito"); // lo puse como un mensaje emergente :v
       }).catch(function (error) {
         console.error(error);
-        alert("Error al crear una venta nuevo");
+        alert("Error al crear una venta nueva");
       });
 
       //setMostrarTabla(true); // si no funiona quitar
@@ -91,13 +71,17 @@ const Ventas = () => {
 
     return (
       <form action="" ref={form} onSubmit={submitFrom}>
-        <input className="datos" type="text" name='id' placeholder="Ingrese el ID" required />
-        <br />
-        <input className="datos" type="text" name='precio' placeholder="Ingrese el nombre" required />
+        <input className="datos" type="text" name='valorTotal' placeholder="Valor total de venta" required />
         <br />
         <input className="datos" type="text" name='cantidad' placeholder="Ingrese La Cantidad" required />
         <br />
-        <input className="datos" type="text" name='comprador' placeholder="Ingrese el Comprador" required />
+        <input className="datos" type="text" name='valorUnidad' placeholder="Valor Unidad" required />
+        <br />
+        <input className="datos" type="date" name='fechaVenta' placeholder="Fecha de venta" required />
+        <br />
+        <input className="datos" type="number" name='idCliente' placeholder="Id Cliente" required />
+        <br />
+        <input className="datos" type="text" name='nombreCliente' placeholder="Nombre Cliente" required />
         <br />
         <select className="multi" name='estado' required>
 
@@ -158,21 +142,26 @@ const Ventas = () => {
         <table>
           <tr>
             <th >ID</th>
-            <th >Precio</th>
+            <th >Valor Total</th>
             <th >Cantidad</th>
-            <th >Comprador</th>
-            <th >Estado</th>
-            <th >Cambios</th>
+            <th >Valor Und</th>
+            <th >Fecha Vent</th>
+            <th >Id Clienten</th>
+            <th>Nombre Client</th>
+            <th>Cambios</th>
           </tr>
           <tbody>
-            {ventasFiltradas.map((Venta) => {
+            {ventasFiltradas.map((Ventas) => {
               return (
                 <tr key={nanoid()}>
-                  <td>{Venta.id}</td>
-                  <td>{Venta.precio}</td>
-                  <td>{Venta.cantidad}</td>
-                  <td>{Venta.comprador}</td>
-                  <td>{Venta.estado}</td>
+                  <td>{Ventas._id.slice(19)}</td>
+                  <td>{Ventas.valorTotal}</td>
+                  <td>{Ventas.cantidad}</td>
+                  <td>{Ventas.valorUnidad}</td>
+                  <td>{Ventas.fechaVenta}</td>
+                  <td>{Ventas.idCliente}</td>
+                  <td>{Ventas.nombreCliente}</td>
+                  <td>{Ventas.estado}</td>
                   <td>
                     <div className="botonListaProducto">
                       <button >Editar</button>
