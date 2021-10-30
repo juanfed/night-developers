@@ -1,4 +1,5 @@
 import 'styles/ventas.css';
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from 'react';
 import { nanoid } from "nanoid";
 import axios from 'axios';
@@ -153,6 +154,82 @@ const Ventas = () => {
           </div>
 
 
+=======
+import React, { useState } from 'react';
+
+const Ventas = () => {
+    const [titulo, setTitulo] = useState('Agregar Ventas');
+    const botonVentas = () => {
+        setTitulo(titulo == 'Agregar Ventas' ? "Ver Lista De Ventas" : "Agregar Ventas")
+
+    };
+
+    return (
+
+        <div className="contenido">
+            <center>
+                <button className="ventasTitulo" onClick={botonVentas}>{titulo}</button>
+                {
+                    titulo == 'Ver Lista De Ventas' && (
+                        <><thead className="contenidoProducto">
+                            <div id="div">
+                                <p>Productos</p>
+                                <select id="productos" class="caja">
+                                    <option value="">Productos</option>
+                                    <option value="laptos">Laptos</option>
+                                    <option value="Tablec">Tablec</option>
+                                </select>
+                            </div>
+
+                            <div id="div">
+                                <p>Precio</p>
+                                <input type="text" id="precio" class="caja" />
+                            </div>
+
+                            <div id="div">
+                                <p>Cantidad</p>
+                                <input type="text" id="cantidad" class="caja" />
+                            </div>
+                        </thead><button type="button" name="name" id="buttom" onclick="agregar()" alerta="Guardado con exito" className="ventas-boton-agregar">Agregar</button></>
+                    )
+                }
+
+                {
+
+                    titulo == 'Agregar Ventas' && (
+
+                        <table id="info">
+
+                            <thead>
+
+                                <tr>
+                                    <th>ID Venta</th>
+                                    <th>precio</th>
+                                    <th>cantidad</th>
+                                    <th>Comprador</th>
+                                    <th>Estado</th>
+
+                                </tr>
+                                <tr>
+                                    <td>V01</td>
+                                    <td >1.500.000</td>
+                                    <td >2</td>
+                                    <td >Carlos</td>
+                                    <td >En proceso</td>
+                                </tr>
+                                <tr>
+                                    <td>V02</td>
+                                    <td >750.000</td>
+                                    <td >1</td>
+                                    <td >Juan</td>
+                                    <td >Cancelado</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    )
+                }
+            </center>
+>>>>>>> 9b21e336aff447368682e8bffec8a328fff0617e
         </div>
 
         <table>
@@ -198,6 +275,7 @@ const Ventas = () => {
           <button className="productoTitulo" onClick={() => setMostrarTabla(!mostrarTabla)}>{titulo}</button>
           <div>
 
+<<<<<<< HEAD
             {mostrarTabla ? (<ListaVentas lista_ventas={ventas} />) : (<AgregarVenta
               crearDato={setVentas} listaVentas={ventas} />)}
           </div>
@@ -207,3 +285,6 @@ const Ventas = () => {
   )
 };
 export default Ventas;
+=======
+export default Ventas
+>>>>>>> 9b21e336aff447368682e8bffec8a328fff0617e
