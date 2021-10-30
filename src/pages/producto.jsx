@@ -10,7 +10,20 @@ const Producto = () => {
   const [productos, setProductos] = useState([]);
   const [titulo, setTitulo] = useState("Agregar Producto");
 
-  useEffect(() => {
+  // bonton de actualizar
+  function Actualizar() {   
+
+    const options = { method: 'GET', url: 'http://localhost:5000/producto' };
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+        setProductos(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
+      alert("Producto actualizado");
+  }
+
+  useEffect(() => { // cada vez que cambie entre agregar producto o ver tabla, me hace un get actualizando los valores de la tabla
     if (mostrarTabla) {
       setTitulo("Agregar Producto");
       const options = { method: 'GET', url: 'http://localhost:5000/producto' };
@@ -25,20 +38,6 @@ const Producto = () => {
       setTitulo("Ver Lista Producto");
     }
   }, [mostrarTabla]);
-
-  useEffect(() => { // modifique esto pero no se si fue la mejor opcion 
-    // aca obtendré la lista de los prouctos desde el backend
-
-    const options = { method: 'GET', url: 'http://localhost:5000/producto' };
-
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-      setProductos(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
-    setProductos([]);
-  }, []);
 
   const AgregarProducto = ({ crearDato, listaProductos }) => {
     const form = useRef(null);
@@ -140,7 +139,7 @@ const Producto = () => {
       <div>
         <div className="buscador_actu">
           <div>
-            <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
+            <button type="button" name="name" id="buttom" className="Actuali_zar" onClick={Actualizar}>Actualizar</button>
             <select className="Select_form" name="filter">
               <option >Seleccione</option>
               <option >ID</option>
