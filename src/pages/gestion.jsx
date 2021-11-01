@@ -3,53 +3,42 @@ import React, { useState, useEffect, useRef } from 'react';
 import { nanoid } from "nanoid";
 import axios from 'axios';
 
-const listaUsuarios = [
-    {
-        nombre: "Juan Camilo",
-        rol: "Administrador",
-        correo: "Juan@gmail.com",
-        estado: "Pendiente"
-    },
-    {
-        nombre: "Andres",
-        rol: "Administrador",
-        correo: "Juan@gmail.com",
-        estado: "Pendiente"
-    },
-]
-
-
 const Gestion = () => {
 
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [gestion, setGestion] = useState([]);
     const [titulo, setTitulo] = useState("Gestionar Usuarios");
 
-    useEffect(() => {
-        if (mostrarTabla) {
-            setTitulo("Gestionar Usuarios");
-        } else {
-            setTitulo("Ver lista de usuarios");
-        }
 
-    }, [mostrarTabla]);
-
-    useEffect(() => {//modifique esto pero no se si fue la mejor opcion 
-        // aca obtendré la lista de los prouctos desde el backend
-
+    // bonton de actualizar
+    function Actualizar() {
 
         const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
-
         axios.request(options).then(function (response) {
             console.log(response.data);
             setGestion(response.data);
         }).catch(function (error) {
             console.error(error);
         });
-        setGestion([]);
-    }, []);
+        alert("Usuarios actualizados");
+    }
 
+    useEffect(() => { // me renderiza para agregar o ver lista de usuarios
+        if (mostrarTabla) { // actualiza cada vez que cambie la renderizacion
+            setTitulo("Gestionar Usuarios");
+            const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
 
+            axios.request(options).then(function (response) {
+                console.log(response.data);
+                setGestion(response.data);
+            }).catch(function (error) {
+                console.error(error);
+            });
+        } else {
+            setTitulo("Ver lista de usuarios");
+        }
+
+    }, [mostrarTabla]);
 
     const AgregarUsuario = ({ crearDato, listaUsuarios }) => {
         const form = useRef(null);
@@ -68,24 +57,21 @@ const Gestion = () => {
                 url: 'http://localhost:5000/usuarios/nuevo',
                 headers: { 'Content-Type': 'application/json' },
                 data: {
-                  nombre: nuevoUsuario.nombre,
-                  correo: nuevoUsuario.correo,
-                  rol: nuevoUsuario.rol,
-                  estado: nuevoUsuario.estado
+                    nombre: nuevoUsuario.nombre,
+                    correo: nuevoUsuario.correo,
+                    rol: nuevoUsuario.rol,
+                    estado: nuevoUsuario.estado
                 }
-              };
-        
-              await axios.request(options).then(function (response) {
+            };
+
+            await axios.request(options).then(function (response) {
                 console.log(response.data);
                 alert("usuario creado con exito"); // lo puse como un mensaje emergente :v
-              }).catch(function (error) {
+            }).catch(function (error) {
                 console.error(error);
-                alert("Error al crear un producto usuario");
-              });
-        
-              //setMostrarTabla(true); // si no funiona quitar
-        
-            };
+                alert("Error al crear un usuario");
+            });
+        };
 
 
 
@@ -136,8 +122,23 @@ const Gestion = () => {
                 </div>
             </div>
         )
+    }
 
+    const EliminarUsuario = async (usuarioId) => {
+        const options = {
+            method: 'DELETE',
+            url: 'http://localhost:5000/usuarios/delete',
+            headers: { 'Content-Type': 'application/json' },
+            data: { id: usuarioId }
+        };
 
+        await axios.request(options).then(function (response) {
+            console.log(response.data);
+            alert("el usuario ha sido borrado");
+        }).catch(function (error) {
+            console.error(error);
+            alert("error al eliminar el usuario");
+        });
     }
 
     const ListaUsuarios = ({ listaPersonas }) => {
@@ -161,7 +162,7 @@ const Gestion = () => {
             <div>
                 <div className="buscador_actu">
                     <div>
-                        <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
+                        <button type="button" name="name" id="buttom" className="Actuali_zar" onClick={Actualizar}>Actualizar</button>
                         <select className="Select_form" name="filter">
                             <option >Seleccione</option>
                             <option >Nombre</option>
@@ -197,7 +198,7 @@ const Gestion = () => {
                                         <td>
                                             <div className="botonListaProducto">
                                                 <button>Editar</button>
-                                                <button>Eliminar</button>
+                                                <button onClick={() => EliminarUsuario(usuario._id)}>Eliminar</button>
                                             </div>
                                         </td>
                                     </tr>
