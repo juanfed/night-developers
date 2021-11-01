@@ -11,6 +11,20 @@ const Ventas = () => {
   const [ventas, setVentas] = useState([]);
   const [titulo, setTitulo] = useState('Agregar Venta');
 
+
+  // boton para actualizar
+  function Actualizar() {   
+
+    const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+      axios.request(options).then(function (response) {
+        console.log(response.data);
+        setVentas(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
+      alert("Ventas actualizadas");
+  }
+
   useEffect(() => {
     if (mostrarTabla) {
       setTitulo('Agregar venta');
@@ -69,6 +83,7 @@ const Ventas = () => {
     };
 
 
+
     return (
       <form action="" ref={form} onSubmit={submitFrom}>
         <input className="datos" type="text" name='valorTotal' placeholder="Valor total de venta" required />
@@ -103,6 +118,23 @@ const Ventas = () => {
     )
   }
 
+  const EliminarVenta = async (ventaId) =>{
+      const options = {
+        method: 'DELETE',
+        url: 'http://localhost:5000/ventas/delete',
+        headers: {'Content-Type': 'application/json'},
+        data: {id: ventaId}
+      };
+      
+      await axios.request(options).then(function (response) {
+        console.log(response.data);
+        alert("venta eliminada con exito");
+      }).catch(function (error) {
+        console.error(error);
+        alert("error al eliminar la venta");
+      });
+  }
+
   const ListaVentas = ({ lista_ventas }) => {
     //buqueda
     const [busqueda, setBusqueda] = useState('');
@@ -123,7 +155,7 @@ const Ventas = () => {
       <div>
         <div className="buscador_actu">
           <div>
-            <button type="button" name="name" id="buttom" className="Actuali_zar">Actualizar</button>
+            <button type="button" name="name" id="buttom" className="Actuali_zar" onClick={Actualizar}>Actualizar</button>
             <select className="Select_form" name="filter">
               <option>Seleccione</option>
               <option >ID</option>
@@ -165,7 +197,7 @@ const Ventas = () => {
                   <td>
                     <div className="botonListaProducto">
                       <button >Editar</button>
-                      <button>Eliminar</button>
+                      <button onClick={()=> EliminarVenta(Ventas._id)}>Eliminar</button>
                     </div>
 
                   </td>

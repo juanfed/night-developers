@@ -113,8 +113,10 @@ const Producto = () => {
     
     await axios.request(options).then(function (response) {
       console.log(response.data);
+      alert("el producto ha sido borrada");
     }).catch(function (error) {
       console.error(error);
+      alert("error al eliminar el producto");
     });
   }
 
