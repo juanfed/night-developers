@@ -172,14 +172,15 @@ const Ventas = () => {
         </div>
 
         <table>
-          <tr>
+          <tr >
             <th >ID</th>
-            <th >Valor Total</th>
+            <th >V.Total</th>
             <th >Cantidad</th>
-            <th >Valor Und</th>
+            <th >V.Und</th>
             <th >Fecha Vent</th>
             <th >Id Clienten</th>
-            <th>Nombre Client</th>
+            <th>N.Client</th>
+            <th>Estado</th>
             <th>Cambios</th>
           </tr>
           <tbody>

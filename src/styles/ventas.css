@@ -1,6 +1,6 @@
 /*Acá ira todo lo de ventas */
 table, th, td {    
-    margin: 25px; 
+    margin: 20px; 
     border:2px solid black (5, 236, 213);
     border-collapse: collapse;
     background-color:#686D76;
@@ -9,7 +9,8 @@ table, th, td {
 
 table th{
     color: white;
-    font-weight: 800;
+    font-weight: 600;
+    
 }
 
 
@@ -21,7 +22,7 @@ table th{
 }
 
 th, td {padding: 20px; 
-    width: 220px;
+    width: 138px;
     color:black;
 
 }
@@ -158,5 +159,8 @@ table tr:hover td{
     color: black;
     box-shadow: 2px 2px 10px 2px #2f394b;
 }
+
+
+
 
 /*Aca modificare u*/
