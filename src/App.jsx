@@ -27,7 +27,7 @@ function App() {
     <Auth0Provider
       domain='proyecto-tic.us.auth0.com'
       clientId='lh4lg09pxtnK7z21S0B4umftdiRP3iJZ'
-      redirectUri='https://shielded-river-27357.herokuapp.com/admin' // ruta de heroku
+      redirectUri='https://rocky-coast-39392.herokuapp.com/admin' // ruta de heroku
     >
       <Router>
         <Switch>
