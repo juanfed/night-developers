@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react"; // para el login y registro con aouth0
 import 'styles/inicio.css';
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
 
 const HeaderPublico = () => {
+    const { loginWithRedirect } = useAuth0(); // funcion para el redireccionamiento con aouth0
     return (
         <div className="inicio_pag">
             <div>
@@ -24,7 +26,7 @@ const HeaderPublico = () => {
                             </div>
 
                             <div><li>
-                                <Link to="/login"><button className="inicio_login">login</button></Link>
+                                <button onClick={() => loginWithRedirect()} className="inicio_login">login</button>
                             </li>
                             </div>
                             <div>

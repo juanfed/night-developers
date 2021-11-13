@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import 'styles/header.css';
+import { useAuth0 } from "@auth0/auth0-react"; // para la opccion de cerrar secion
 import Transicion from 'components/script';
 import {useEffect} from 'react';
 
@@ -7,7 +8,8 @@ import {useEffect} from 'react';
 function Header(){
     useEffect(()=>{
         Transicion()
-    },[])
+    },[]);
+    const { logout } = useAuth0(); // para el boton de salir
     return(
         <section id="body">
             <div className="header">
@@ -60,7 +62,7 @@ function Header(){
                     </div>
                         <div href="#" className="nav__link">
                             <i className='bx bx-log-out nav__icon'></i>
-                            <Link to="/login"><span className="nav__name">Salir</span></Link>
+                            <span onClick={() => logout({ returnTo: window.location.origin })} className="nav__name">Salir</span>
                         </div>
                     </nav>
                 </div>

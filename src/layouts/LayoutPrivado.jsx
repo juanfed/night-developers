@@ -1,12 +1,14 @@
 import Header from 'components/Header';
-import React from 'react';
+import RutaPrivada from 'components/RutaPrivada';
 
 const LayoutPrivado = ({ children }) => {
     return (
-        <div>
+        <RutaPrivada>
+            <div>
             <Header />
             <main>{children}</main>
         </div>
+        </RutaPrivada>
     )
 }
 
