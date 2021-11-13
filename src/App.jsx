@@ -27,7 +27,7 @@ function App() {
     <Auth0Provider
       domain='proyecto-tic.us.auth0.com'
       clientId='lh4lg09pxtnK7z21S0B4umftdiRP3iJZ'
-      redirectUri='https://stark-bayou-31368.herokuapp.com/admin' // ruta para que debo de poner para evitar errores al desplegar en heroku
+      redirectUri='http://localhost3000/admin' // ruta para que debo de poner para evitar errores al desplegar en heroku
     >
       <Router>
         <Switch>
