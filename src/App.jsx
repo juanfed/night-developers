@@ -24,6 +24,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
   return ( /*Aca se incluiran todas las paginas de nuestro sitio web */
+
+    //esto aca es para la autenticacion con aouth0 y de paso tambien para que luego me redirija a el layout provado
     <Auth0Provider
       domain='proyecto-tic.us.auth0.com'
       clientId='lh4lg09pxtnK7z21S0B4umftdiRP3iJZ'
