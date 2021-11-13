@@ -29,7 +29,7 @@ function App() {
     <Auth0Provider
       domain='proyecto-tic.us.auth0.com'
       clientId='lh4lg09pxtnK7z21S0B4umftdiRP3iJZ'
-      redirectUri='https://blooming-atoll-23590.herokuapp.com/admin' // ruta de heroku
+      redirectUri='http://localhots3000' // ruta de heroku
     >
       <Router>
         <Switch>
