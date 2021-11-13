@@ -27,7 +27,7 @@ function App() {
     <Auth0Provider
       domain='proyecto-tic.us.auth0.com'
       clientId='lh4lg09pxtnK7z21S0B4umftdiRP3iJZ'
-      redirectUri='http://localhost:3000/admin'
+      redirectUri='https://stark-bayou-31368.herokuapp.com/admin'
     >
       <Router>
         <Switch>
