@@ -13,7 +13,7 @@ const Producto = () => {
   // bonton de actualizar
   function Actualizar() {   
 
-    const options = { method: 'GET', url: 'http://localhost:5000/producto' };
+    const options = { method: 'GET', url: 'https://salty-eyrie-46898.herokuapp.com/producto' };
       axios.request(options).then(function (response) {
         console.log(response.data);
         setProductos(response.data);
@@ -26,7 +26,7 @@ const Producto = () => {
   useEffect(() => { // cada vez que cambie entre agregar producto o ver tabla, me hace un get actualizando los valores de la tabla
     if (mostrarTabla) {
       setTitulo("Agregar Producto");
-      const options = { method: 'GET', url: 'http://localhost:5000/producto' };
+      const options = { method: 'GET', url: 'https://salty-eyrie-46898.herokuapp.com/producto' };
 
       axios.request(options).then(function (response) {
         console.log(response.data);
@@ -54,7 +54,7 @@ const Producto = () => {
 
       const options = {
         method: 'POST',
-        url: 'http://localhost:5000/producto/nuevo',
+        url: 'https://salty-eyrie-46898.herokuapp.com/producto/nuevo',
         headers: { 'Content-Type': 'application/json' },
         data: {
           nombre: nuevoProducto.nombre,
@@ -106,7 +106,7 @@ const Producto = () => {
   const EliminarProducto = async (productoId) =>{
     const options = {
       method: 'DELETE',
-      url: 'http://localhost:5000/producto/delete',
+      url: 'https://salty-eyrie-46898.herokuapp.com/producto/delete',
       headers: {'Content-Type': 'application/json'},
       data: {id: productoId}
     };
