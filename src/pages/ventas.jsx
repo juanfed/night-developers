@@ -15,7 +15,7 @@ const Ventas = () => {
   // boton para actualizar
   function Actualizar() {   
 
-    const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+    const options = { method: 'GET', url: 'https://salty-eyrie-46898.herokuapp.com/ventas' };
       axios.request(options).then(function (response) {
         console.log(response.data);
         setVentas(response.data);
@@ -28,7 +28,7 @@ const Ventas = () => {
   useEffect(() => {
     if (mostrarTabla) {
       setTitulo('Agregar venta');
-      const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+      const options = { method: 'GET', url: 'https://salty-eyrie-46898.herokuapp.com/ventas' };
 
       axios.request(options).then(function (response) {
         console.log(response.data);
@@ -57,7 +57,7 @@ const Ventas = () => {
 
       const options = {
         method: 'POST',
-        url: 'http://localhost:5000/ventas/nuevo',
+        url: 'https://salty-eyrie-46898.herokuapp.com/ventas/nuevo',
         headers: { 'Content-Type': 'application/json' },
         data: {
           valorTotal: nuevoVenta.valorTotal,
@@ -121,7 +121,7 @@ const Ventas = () => {
   const EliminarVenta = async (ventaId) =>{
       const options = {
         method: 'DELETE',
-        url: 'http://localhost:5000/ventas/delete',
+        url: 'https://salty-eyrie-46898.herokuapp.com/ventas/delete',
         headers: {'Content-Type': 'application/json'},
         data: {id: ventaId}
       };

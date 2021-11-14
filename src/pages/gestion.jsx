@@ -13,7 +13,7 @@ const Gestion = () => {
     // bonton de actualizar
     function Actualizar() {
 
-        const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
+        const options = { method: 'GET', url: 'https://salty-eyrie-46898.herokuapp.com/usuarios' };
         axios.request(options).then(function (response) {
             console.log(response.data);
             setGestion(response.data);
@@ -26,7 +26,7 @@ const Gestion = () => {
     useEffect(() => { // me renderiza para agregar o ver lista de usuarios
         if (mostrarTabla) { // actualiza cada vez que cambie la renderizacion
             setTitulo("Gestionar Usuarios");
-            const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
+            const options = { method: 'GET', url: 'https://salty-eyrie-46898.herokuapp.com/usuarios' };
 
             axios.request(options).then(function (response) {
                 console.log(response.data);
@@ -54,7 +54,7 @@ const Gestion = () => {
             });
             const options = {
                 method: 'POST',
-                url: 'http://localhost:5000/usuarios/nuevo',
+                url: 'https://salty-eyrie-46898.herokuapp.com/usuarios/nuevo',
                 headers: { 'Content-Type': 'application/json' },
                 data: {
                     nombre: nuevoUsuario.nombre,
@@ -127,7 +127,7 @@ const Gestion = () => {
     const EliminarUsuario = async (usuarioId) => {
         const options = {
             method: 'DELETE',
-            url: 'http://localhost:5000/usuarios/delete',
+            url: 'https://salty-eyrie-46898.herokuapp.com/delete',
             headers: { 'Content-Type': 'application/json' },
             data: { id: usuarioId }
         };
