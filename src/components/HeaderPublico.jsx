@@ -26,13 +26,9 @@ const HeaderPublico = () => {
                             </div>
 
                             <div><li>
-                                <button onClick={() => loginWithRedirect()} className="inicio_login">login</button>
+                                <button onClick={() => loginWithRedirect()} className="inicio_login">login/Registro</button>
                             </li>
                             </div>
-                            <div>
-                                <li>
-                                    <Link to="/registro"><button className="inicio_registro">registro</button></Link>
-                                </li></div>
                         </li>
                     </ul>
                 </header>
