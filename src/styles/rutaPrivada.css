@@ -1,0 +1,35 @@
+.autenticacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    /* border: 2px solid black; */
+    justify-content: center;
+}
+
+.autenticacion__tittle{
+    color: #FF1700;
+    margin: 0rem 0rem 3rem 0rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.autenticacion__link P{
+    font-size: 1.5rem;
+    padding: .5rem 1em;
+}
+
+/*Interaacion con el usuario*/
+
+.autenticacion__tittle:hover{
+    color: #444444;
+}
+
+.autenticacion__link p{
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.autenticacion__link p:hover{
+    background-color: #000000;
+}
